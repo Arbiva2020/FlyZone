@@ -1,0 +1,28 @@
+/* button {
+    border-style: solid;
+    width: 9rem;
+    border-color: #ffffff;
+    border-radius: 20px;
+    border-width: 0.5px;
+    height: 3rem;
+} */
+
+.isPrimaryStyle {
+    border-style: solid;
+    width: 9rem;
+    border-color: #ffffff;
+    border-radius: 20px;
+    border-width: 0.5px;
+    height: 3rem;
+    margin-left: 50px;
+}
+
+.dark {
+    color:#ffffff;
+    background-color: black;
+}
+
+.light {
+    color: black;
+    background-color: #ffffff;
+}

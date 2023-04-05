@@ -1,0 +1,18 @@
+.header {
+    color: #ffffff;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.menu {
+    color: #ffffff;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 50%;
+    font-family: lexend;
+    font-weight:lighter;
+    position: absolute;
+    right: 0px;
+}
