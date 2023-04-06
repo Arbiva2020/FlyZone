@@ -1,22 +1,20 @@
 import React from 'react'
 import "./Header.css"
-// import logo2 from "../../assets/logo2.png"
+import { Link } from 'react-router-dom'
+// import Logo2 from '../../assets/Logo2.png'
 
 const Header = () => {
   return (
     <div className='header'>
-      <div>
-        {/* <img src={logo2} alt="flyZone logo" /> */}
+      <div className='logo_div'>
+        <img src={'../../assets/Logo1.png'} className="header_logo" alt="logo"/>
+        {/* <img src={Logo2} alt="logo"/> */}
       </div>
       <div className='menu'>
-        <p>About</p>
-        <p>Pricing</p>
-        <p>Contact</p>
-        <p>Help</p>
-        {/* <link to="/">About</link>
-        <link to="/">Pricing</link>
-        <link to="/">Contact</link>
-        <link to="/">Help</link> */}
+        <Link className='header_link' to="/about">About</Link>
+        <Link className='header_link' to="paymentProgram">Pricing</Link>
+        <Link className='header_link' to="contact">Contact</Link>
+        <Link className='header_link'>Help</Link>
       </div>
       
     </div>

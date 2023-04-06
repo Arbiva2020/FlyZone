@@ -63,7 +63,7 @@
     letter-spacing: .15em; /* Adjust as needed */
     animation: 
       typing 2s steps(30, end),
-      blink-caret .3s steps(10);
+      blink-caret .65s step-end infinite;
   }
   
   /* The typing effect */

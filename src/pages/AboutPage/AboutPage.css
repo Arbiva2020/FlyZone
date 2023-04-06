@@ -1,0 +1,54 @@
+.about_main {
+    font-family: lexend;
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    position: absolute;
+    top: 15%;
+
+}
+
+.about_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about_headline {
+    font-weight: bold;
+}
+
+p {
+    font-weight:lighter;
+    align-self: center;
+}
+
+.about_graphics {
+    display: inline;
+}
+
+.about_circle {
+    background-color: #ffffff;
+    filter: blur(40px);
+    height: 200px;
+    width: 400px;
+    border-radius: 50%;
+    display: flex;
+    position:relative;
+    left: 0px;
+    top: 90%;
+    margin-top: 30px;
+}
+
+.about_img {
+    height: 200px;
+    width: 300px;
+    bottom: 5%;
+    z-index: 1;
+    background: transparent;
+    position: absolute;
+    left: 30%;
+}

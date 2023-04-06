@@ -2,7 +2,7 @@
     color: #ffffff;
     display:flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .menu {
@@ -15,4 +15,19 @@
     font-weight:lighter;
     position: absolute;
     right: 0px;
+    background: transparent;
+}
+
+.header_link {
+    color:#ffffff;
+    text-decoration: none;
+}
+
+.logo_div {
+    left:0%
+}
+
+.header_logo {
+    height: 50px;
+    width: 50px;
 }

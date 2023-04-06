@@ -1,0 +1,25 @@
+.errorPage {
+    color: white;
+    font-family: lexend;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    /* position: absolute; */
+}
+
+.error_headline {
+    color: white;
+    font-weight: bold;
+}
+
+.error_text {
+    color: white;
+    font-weight: lighter;
+}
+
+.redirecting {
+    color: #B943B4;
+    text-decoration: none;
+}
