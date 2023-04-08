@@ -6,10 +6,9 @@ import { Link } from 'react-router-dom'
 const Header = () => {
   return (
     <div className='header'>
-      <div className='logo_div'>
+      {/* <div className='logo_div'>
         <img src={'../../assets/Logo1.png'} className="header_logo" alt="logo"/>
-        {/* <img src={Logo2} alt="logo"/> */}
-      </div>
+      </div> */}
       <div className='menu'>
         <Link className='header_link' to="/about">About</Link>
         <Link className='header_link' to="paymentProgram">Pricing</Link>

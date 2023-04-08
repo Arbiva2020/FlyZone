@@ -32,7 +32,7 @@ const AboutPage = () => {
                         
                 </div>
     </div>
-    
+   
   )
 }
 

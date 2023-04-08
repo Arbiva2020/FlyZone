@@ -1,0 +1,110 @@
+.createProfile_main {
+    color: white;
+    font-family: lexend;
+    position: relative;
+    }
+
+.createProfile_frame {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    width: 500px;
+    height: 600px;
+}
+
+.createProfile_form {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: space-evenly;
+    height: 400px;
+}
+
+.file_input{
+    align-self: center;
+    margin-bottom: 30px;
+}
+
+.firstname_input {
+    height: 30px;
+    margin-right: 6px;
+    margin-left: 10px;
+    border-radius: 10px;
+    width: 45%;
+}
+
+.lastname_input {
+    height: 30px;
+    margin-right: 10px;
+    border-radius: 10px;
+    width: 45%;
+}
+
+.createProfileForm_name {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 30px;
+}
+
+.username_input {
+    height: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+.eMail_input {
+    height: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+.organization_input {
+    height: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+.create_button {
+    background-color: #B943B4;
+    height: 30px;
+    margin-right: 2px;
+    margin-left: 2px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+    border-radius: 20px;
+    width: 300px;
+    display: block;
+    margin: auto;
+}
+
+.createProfile_headline {
+    text-align: center;
+    font-size: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile_pic {
+    width: 150px;
+    height: 150px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #ffffff;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
