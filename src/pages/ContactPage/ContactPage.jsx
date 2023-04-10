@@ -1,30 +1,100 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Header from '../../components/Header/Header'
 import './ContactPage.css'
-import { useForm } from 'react-hook-form'
+import Button from '../../components/Generic/Button/Button'
+import Input from '../../components/Generic/Input/Input'
+import { contactDefaultState } from '../../constants/FormDeaults'
+import { validateEmail, validateMinMax } from '../../validators/validators'
 
 const ContactPage = () => {
-  const {register, handleSubmit, formState: {errors}} = useForm();
-  console.log(errors)
+  const [contactObject, setContactObject] = useState(contactDefaultState)
+  const [errors,setErrors] = useState([])
+
+  const handleChange = (name,value) => {
+    setContactObject({...contactObject, [name]:value})
+  }
+
+  const handleSubmitForm = () => {
+    setErrors([])
+    let isValid = true
+
+    for (const key in contactObject){
+      console.log(key)
+      if(key === "firstName" || key === "lastName"){
+        isValid = validateMinMax(contactObject[key], 3, 20)
+
+        if(!isValid){
+          setErrors(prev => [`${key} does not meet the requirements of minimum 3 letters or max 20 letters`,...prev])
+        }
+      }
+        if(key === "content"){
+          isValid = validateMinMax(contactObject[key], 10, 500)
   
+          if(!isValid){
+            setErrors(prev => [`${key} does not meet the requirements of minimum 10 letters or max 500 letters`,...prev])
+          }
+      }
+      if(key ==="email"){
+        isValid = validateEmail(contactObject[key])
+        console.log(isValid)
+        if(!isValid){
+          setErrors(prev => ['email is not Valid',...prev])
+        }
+      }
+    }
+    if(!isValid){
+      return
+    }
+    console.log(contactObject)
+    //take an action
+  }
+console.log(errors)
+  const handleClearForm = () => {
+    setContactObject(contactDefaultState)
+  }
+
   return (
     <div className='contact_main'>
       <Header />
       <div className='contact_frame'>
         <h3 className='contact_headline'>Contact us:</h3>
-        <form className="contact_form" onSubmit={handleSubmit((data) => {
-          console.log(data);
-        })}>
+        <form className="contact_form">
           <div className='form_name'>
-            <input {...register("firstName", {required: true})} placeholder="First Name" className='firstName_input'/>
-            <input {...register("laststName", {required: true})} placeholder="Last Name" className='lastName_input'/>
+          <Input 
+               name={"firstName"} 
+               value={contactObject.firstName}
+               onChange={(e) => handleChange(e.target.name, e.target.value)}
+            />
+            <Input 
+               name={"lastName"} 
+               value={contactObject.lastName}
+               onChange={(e) => handleChange(e.target.name, e.target.value)}
+            />
           </div>
-          <input {...register("email", {required: true})} placeholder="eMail" className='email_input'/>
-          <input {...register("content", {required: true, minLength:{value: 10, message: "Min length is 10 chars"}})} placeholder="Content" className='content_input'/>
-          <input type="submit" className='submit_button'/>
+          <div className='mail_extra'>
+            <Input
+              name={"email"}
+               type={"email"}
+               value={contactObject.email}
+               onChange={(e) => handleChange(e.target.name, e.target.value)}
+            />   
+            <textarea className='form_extra' name="content" value={contactObject.content} rows="8" cols="50" onChange={(e) => handleChange(e.target.name, e.target.value)}></textarea>  
+          </div>     
         </form>
+        <div className='contactButtons'>
+        <Button 
+            text={"Submit"}
+            isLightStyle
+            onClick={handleSubmitForm}
+          /> 
+           <Button 
+            text={"Clear"}
+            onClick={handleClearForm}
+          />
+        </div>
         <p className='flyzone_adress'>Burnstein blvd.1 Yeruham, Israel. POB: 8055401</p>
       </div>
+      {errors.length > 0 && errors.map(error => <p>{error}</p>)}
     </div>
   )
 }

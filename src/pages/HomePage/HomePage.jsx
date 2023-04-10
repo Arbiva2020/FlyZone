@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import "./HomePage.css"
 import "../../components/Generic/Button/Button.css"
 import Header from '../../components/Header/Header'
@@ -6,6 +7,17 @@ import Button from '../../components/Generic/Button/Button'
 import Drone1 from '../../assets/Drone1-removebg-preview.png'
 
 const HomePage = () => {
+
+  const navigate = useNavigate();
+
+  const navigateToLoginPage = () => {
+    navigate('/login');
+  };
+  const navigateToRegisterPage = () => {
+    navigate('/register');
+  };
+
+
   return (
     <div className='main'>
       <div className='circle1'></div>
@@ -16,8 +28,15 @@ const HomePage = () => {
               <h4 className='slogen'>Innovative Drone Technology</h4>
         </div>
         <div className='buttons'>
-          <Button name={"Login"} className={"light"}/>
-          <Button name={"SignUp"} className={"dark"}/>
+          <Button 
+            text={"Login"}
+            isLightStyle
+            onClick={navigateToLoginPage}
+          />
+          <Button 
+              text={"Register"}
+              onClick={navigateToRegisterPage}
+          />
         </div>
       </div>
       <div className='drone1'>

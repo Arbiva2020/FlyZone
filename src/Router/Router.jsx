@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes,useNavigate } from 'react-router-dom'
 import HomePage from '../pages/HomePage/HomePage'
 import SplashScreenPage from "../pages/SplashScreenPage/SplashScreenPage"
 import AboutPage from "../pages/AboutPage/AboutPage"
@@ -21,7 +21,7 @@ const Router = () => {
             <Route path="/" element={<HomePage />}/>
             <Route path="splash" element={<SplashScreenPage />}/>
             <Route path="about" element={<AboutPage />}/>
-            <Route path="login" element={<LoginPage />}/>
+            <Route path="/login" element={<LoginPage />}/>
             <Route path="register" element={<RegisterPage />} />
             <Route path="user" element={<SingleUserStatistics />} />
             <Route path="allStats" element={<UsersStatisticsPage />} />

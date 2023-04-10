@@ -1,13 +1,21 @@
+import classNames from 'classnames'
 import React  from 'react'
 import "./Button.css"
 
-const Button = ({isPrimaryStyle, text, onClick}) => {
+const Button = ({isDisabled, isLightStyle, onClick, text="default", customStyles={}}) => {
+  const btnEnabledDisabled = !isDisabled ? "btn-enable" : "btn-disabled"
+  const btnDarkOrLightStyle = !isLightStyle ? "btn-darkStyle" : "btn-lightStyle"
   return (
     <div>
-      {/* <button className={isPrimaryStyle ? "dark" : "light"} onClick={onClick}>{props.name}</button> */}
-      <button className='isPrimaryStyle'></button>
+      <button 
+        className={classNames('btn', btnDarkOrLightStyle, btnEnabledDisabled)}
+        onClick={onClick}
+        disabled={isDisabled}
+        style={customStyles}
+        >
+          {text}
+      </button>
     </div>
-    
   )
 }
 
