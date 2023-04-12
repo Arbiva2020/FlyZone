@@ -86,7 +86,7 @@ console.log(errors)
             text={"Submit"}
             isLightStyle
             onClick={handleSubmitForm}
-          /> 
+          />
            <Button 
             text={"Clear"}
             onClick={handleClearForm}
@@ -94,7 +94,9 @@ console.log(errors)
         </div>
         <p className='flyzone_adress'>Burnstein blvd.1 Yeruham, Israel. POB: 8055401</p>
       </div>
-      {errors.length > 0 && errors.map(error => <p>{error}</p>)}
+          <div className='error_div'>
+            {errors.length > 0 && errors.map(error => <p className='contact_error'>{error}</p>)}
+          </div> 
     </div>
   )
 }

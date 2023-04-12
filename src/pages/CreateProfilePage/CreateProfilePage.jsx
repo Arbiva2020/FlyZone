@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
 import Header from '../../components/Header/Header'
+// import { createProfileDefaultState } from '../../constants/FormDeaults'
+import { validatePassword, validateMinMax } from '../../validators/validators'
 import './CreateProfilePage.css'
 import Profile from '../../assets/Profile.png'
 

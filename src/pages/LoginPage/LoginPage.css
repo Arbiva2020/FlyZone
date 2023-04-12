@@ -12,7 +12,7 @@
 }
 
 .login_frame {
-    height: 300px;
+    height: 350px;
     width: 200px;
     border-style: solid;
     border-color: gray;
@@ -25,7 +25,7 @@
     left: 0;
     right: 0;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 .loginButton {
@@ -63,4 +63,43 @@
     width: 100px;
     display: block;
     margin: auto;
+}
+
+.wrapInputAndIcon {
+    position:relative;
+}
+
+.eyeCanceldIcon {
+    height: 1.5rem;
+    width: 1.5rem;
+    padding: 4px;
+    position: absolute;
+    box-sizing:border-box;
+    top:50%;
+    left:80%;
+    transform: translateY(-50%);
+    color: black;
+    cursor: pointer;
+}
+
+.eyeIcon {
+    height: 1.5rem;
+    width: 1.5rem;
+    padding: 4px;
+    position: absolute;
+    box-sizing:border-box;
+    top:50%;
+    left:80%;
+    transform: translateY(-50%);
+    color: black;
+    cursor: pointer;
+}
+
+.forgotPass {
+    text-align: center;
+    font-size: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: 1px;
+    cursor: pointer;
 }
