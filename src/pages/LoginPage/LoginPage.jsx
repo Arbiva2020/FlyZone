@@ -84,6 +84,7 @@ console.log(errors)
               text={"Login"}
               isLightStyle
               onClick={handleSubmitForm}
+              to="/allStats"
             />
         </div>
         <p className='forgotPass'>Forgot password?</p>

@@ -1,0 +1,23 @@
+.mainView_content {
+    display: flex;
+    flex-direction: row;
+}
+
+.mainView_hedline {
+    text-align: center;
+    color: white;
+    margin-top: 5%;
+    font-family: lexend;
+    font-size: 25px;
+}
+
+.main_table {
+    background-color: #D6DBDF; 
+    border-radius: 20px;
+    height: 22rem;
+    width: 50rem;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+}

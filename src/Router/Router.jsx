@@ -31,6 +31,8 @@ const Router = () => {
             <Route path="mainView" element={<MainViewPage />} />
             <Route path="paymentProgram" element={<PaymentProgramPage />} />
             <Route path="subscribe" element={<SubscriptionPage />} />
+            <Route path="*" element={<ErrorPage />} />
+
         </Routes>
     </BrowserRouter>
   )

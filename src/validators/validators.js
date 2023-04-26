@@ -29,3 +29,9 @@ export const confirmPassword = (password, str) => {
         return false
     } return true
 }
+
+export const validateFileType = (file) => {
+    if(!file.name.match(/\.(jpg|jpeg|png|gif)$/)){
+        return false
+    } return true
+}

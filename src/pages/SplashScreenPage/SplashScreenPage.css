@@ -5,10 +5,9 @@
 .splash_div {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    /* position: absolute;
-    z-index: 1; */
+   height: 300px;
 }
 
 .main_headline_splash {

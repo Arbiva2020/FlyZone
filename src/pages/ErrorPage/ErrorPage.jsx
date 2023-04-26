@@ -10,7 +10,7 @@ const ErrorPage = () => {
   return (
     <div className='errorPage'>
       <h2 className='error_headline'>Error</h2>
-      <p className='error_text'>some text indicating source of error</p>
+      <p className='error_text'>404 - Page not found</p>
       <Link className='redirecting' onClick={goBack}>Back</Link>
     </div>
   )

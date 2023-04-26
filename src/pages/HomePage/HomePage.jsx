@@ -26,18 +26,19 @@ const HomePage = () => {
         <div className='headlines'>
               <h1 className='main_headline'>FlyZone</h1>
               <h4 className='slogen'>Innovative Drone Technology</h4>
+              <div className='buttons'>
+                <Button 
+                  text={"Login"}
+                  isLightStyle
+                  onClick={navigateToLoginPage}
+                />
+                <Button 
+                    text={"Register"}
+                    onClick={navigateToRegisterPage}
+                />
+              </div>
         </div>
-        <div className='buttons'>
-          <Button 
-            text={"Login"}
-            isLightStyle
-            onClick={navigateToLoginPage}
-          />
-          <Button 
-              text={"Register"}
-              onClick={navigateToRegisterPage}
-          />
-        </div>
+      
       </div>
       <div className='drone1'>
         <img src={Drone1}/>

@@ -22,6 +22,8 @@
 .header_link {
     color:#ffffff;
     text-decoration: none;
+    display: flex;
+    align-self: center;
 }
 
 .logo_div {
@@ -29,8 +31,8 @@
 }
 
 .header_logo {
-    height: 80px;
-    width: 90px;
+    height: 100px;
+    width: 110px;
     position: relative;
     z-index: 1;
 }

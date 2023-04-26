@@ -4,4 +4,7 @@ export const registerDefaultState = {firstName:'', lastName:'', email:'', passwo
 
 export const loginDefaultState = {userName:'', password:''}
 
+export const createProfileDefaultState = {file:'', userName:'', firstName:'', lastName:'', email:'', roll: "", organization: ""}
+
+
 
