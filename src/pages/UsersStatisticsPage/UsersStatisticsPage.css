@@ -38,10 +38,10 @@
 }
 
 .users_chart {
-    border-style: solid;
+    /* border-style: solid;
     border-width: 1px;
     border-color: #ffffff;
-    border-radius: 20px;
+    border-radius: 20px; */
     margin: 20px 0px 20px 0px;
     height: 33vh;
 }
@@ -69,4 +69,42 @@
     font-weight:lighter;
     margin-left: 15px;
     line-height: 50px;
+}
+
+table {
+    width: 950px;
+    height: 300px;
+    border-collapse: collapse;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+
+  th,td {
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+th {
+  text-align: left;
+}
+thead th {
+  background-color:  hsl(303, 39%, 58%);
+}
+tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+tbody td {
+  position: relative;
+}
+tbody td:hover:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -9999px;
+  bottom: -9999px;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: -1;
 }

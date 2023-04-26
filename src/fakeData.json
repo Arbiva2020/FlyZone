@@ -1,0 +1,28 @@
+[
+  {
+    "FirstName": "Hello",
+    "lastName": "World",
+    "currentLevel": 5,
+    "MMR": 4,
+    "badges": 2,
+    "totalScore": 230
+  },
+  {
+    "FirstName": "Matilda",
+    "lastName": "Glory",
+    "currentLevel": "A",
+    "MMR": "6",
+    "badges": 5,
+    "totalScore": 550
+  },
+  {
+    "FirstName": "Smoopsie",
+    "lastName": "poo",
+    "currentLevel": "D",
+    "MMR": "8",
+    "badges": 10,
+    "totalScore": "2671"
+  }
+]
+
+
