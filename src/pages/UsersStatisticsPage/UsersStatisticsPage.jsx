@@ -3,7 +3,9 @@ import AuthHeader from '../../components/AuthHeader/AuthHeader'
 import SideBar from '../../components/SideBar/SideBar'
 import "./UsersStatisticsPage.css"
 import fakeData from '../../fakeData.json'
-import { useTable } from "react-table"
+import { useSortBy, useTable } from "react-table"
+import { FaSortAmountDownAlt } from "react-icons/fa"
+import { FaSortAmountDown } from "react-icons/fa"
 
 const UsersStatisticsPage = () => {
   const data = React.useMemo(() => fakeData, []);
@@ -36,8 +38,7 @@ const UsersStatisticsPage = () => {
     ], []
   );
 
-  const {getTableProps, getTableBodyProps, headerGroups, rows, prepareRow} = useTable({columns, data})
-console.log(fakeData)
+  const {getTableProps, getTableBodyProps, headerGroups, rows, prepareRow} = useTable({columns, data}, useSortBy)
   return (
     <div>
       <div className='users_main'>
@@ -52,17 +53,24 @@ console.log(fakeData)
               <table {...getTableProps()}>
                 <thead>
                   {headerGroups.map((headerGroup) => (
-                    <tr {...headerGroup.getHeaderGroupProps()}>
+                    <tr {...headerGroup.getHeaderGroupProps()}className='usersStats_tr'>
                       {headerGroup.headers.map((column) => (
-                        <th {...column.getHeaderProps()}>
+                        <th {...column.getHeaderProps(column.getSortByToggleProps())} className='usersStats_th'>
                           {column.render("Header")}
+                          <span className='usersStats_span'>
+                            {column.isSorted
+                            ? column.isSortedDesc
+                            ? <FaSortAmountDown />
+                            : <FaSortAmountDownAlt />
+                            : ''}
+                          </span>
                         </th>
                       ))}
                     </tr>
                   ))}
                 </thead>
                 <tbody {...getTableBodyProps()}>
-                  {rows.map((row) => {
+                  {rows.map((row, i) => {
                     prepareRow(row)
                     return (
                       <tr {...row.getRowProps()}>

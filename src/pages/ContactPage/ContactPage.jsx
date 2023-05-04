@@ -61,12 +61,14 @@ console.log(errors)
         <form className="contact_form">
           <div className='form_name'>
           <Input 
-               name={"firstName"} 
+               name={"firstName"}
+               placeholder='First Name' 
                value={contactObject.firstName}
                onChange={(e) => handleChange(e.target.name, e.target.value)}
             />
             <Input 
                name={"lastName"} 
+               placeholder='Last Name' 
                value={contactObject.lastName}
                onChange={(e) => handleChange(e.target.name, e.target.value)}
             />
@@ -74,11 +76,12 @@ console.log(errors)
           <div className='mail_extra'>
             <Input
               name={"email"}
+              placeholder='email' 
                type={"email"}
                value={contactObject.email}
                onChange={(e) => handleChange(e.target.name, e.target.value)}
             />   
-            <textarea className='form_extra' name="content" value={contactObject.content} rows="8" cols="50" onChange={(e) => handleChange(e.target.name, e.target.value)}></textarea>  
+            <textarea className='form_extra' placeholder='Messege' name="content" value={contactObject.content} rows="8" cols="50" onChange={(e) => handleChange(e.target.name, e.target.value)}></textarea>  
           </div>     
         </form>
         <div className='contactButtons'>

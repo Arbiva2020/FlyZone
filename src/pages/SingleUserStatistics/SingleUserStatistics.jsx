@@ -1,10 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import AuthHeader from '../../components/AuthHeader/AuthHeader'
 import SideBar from '../../components/SideBar/SideBar'
 import Profile from '../../assets/Profile.png'
 import './SingleUserStatistics.css'
+import BarChart from '../../components/BarChart/BarChart'
+import { datafake } from '../../dataFake'
+import { Colors } from 'chart.js';
 
-const SingleUserStatistics = () => {
+function SingleUserStatistics() {
+  // Chart.register(Colors);
+  const [singleuserData, setSingleuserData] = useState({
+    labels: datafake.map((data) => data.id), 
+    datasets: [
+      {
+        label: "Users' collisions", 
+        data: datafake.map((data) => data.collisions),
+        backgrounColor: ["#ffffff"]
+      }
+    ]
+  })
+
   return (
     <div className='singleUser_main'>
       <AuthHeader />
@@ -14,7 +29,7 @@ const SingleUserStatistics = () => {
         </div>
         <div className='singleUser_charts'>
           <div className='singleUser_headline'>Users' Statistics</div>
-          <div className='singleUser_upper_chart_section'>chart</div>
+          <div className='singleUser_upper_chart_section'><BarChart chartData={singleuserData} /></div>
           <div className='singleUser_lower_chart_section'>more charts</div>
           <div className='singleUser_pie_section'>
             <div className='singleUser_pie_left'>pie</div>

@@ -13,12 +13,15 @@ const SubscriptionPage = () => {
         <div className='basic_plan'>
           <div className='basic_frame'>
             <h2 className='headline'>BASIC</h2>
-            <h5>3 Scenarios</h5>
-            <h5>2 levels</h5>
-            <h5>Automated repord</h5>
-            <h5>detailed statistics:</h5>
-            <h6>Per user</h6>
-            <h6>Per class</h6>
+            <div className='details_container'>
+              <h5 className='details_item'>3 Scenarios</h5>
+              <h5 className='details_item'>2 levels</h5>
+              <h5 className='details_item'>Automated repord</h5>
+              <h5 className='details_item'>detailed statistics:</h5>
+              <h5 className='details_item'></h5>
+              <h6 className='details_item'>Per user</h6>
+              <h6 className='details_item'>Per class</h6>
+            </div>
             <h2 className='price'>ONLY 50$</h2>
           </div>
           <Button 
@@ -31,13 +34,13 @@ const SubscriptionPage = () => {
         <div className='premium_plan'>
           <div className='premium_frame'>
           <h2 className='headline'>PREMIUM</h2>
-            <h5>Access to all scenarios</h5>
-            <h5>Access to all levels</h5>
-            <h5>Automated repord</h5>
-            <h5>Full dashboard</h5>
-            <h5>detailed statistics:</h5>
-            <h6>Per user</h6>
-            <h6>Per class</h6>
+            <h5 className='details_item'>Access to all scenarios</h5>
+            <h5 className='details_item'>Access to all levels</h5>
+            <h5 className='details_item'>Automated repord</h5>
+            <h5 className='details_item'>Full dashboard</h5>
+            <h5 className='details_item'>detailed statistics:</h5>
+            <h6 className='details_item'>Per user</h6>
+            <h6 className='details_item'>Per class</h6>
             <h2 className='price'>ONLY 100$</h2>
           </div>
           <Button 

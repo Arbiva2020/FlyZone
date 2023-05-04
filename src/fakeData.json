@@ -1,6 +1,6 @@
 [
   {
-    "FirstName": "Hello",
+    "firstName": "Hello",
     "lastName": "World",
     "currentLevel": 5,
     "MMR": 4,
@@ -8,7 +8,7 @@
     "totalScore": 230
   },
   {
-    "FirstName": "Matilda",
+    "firstName": "Netta",
     "lastName": "Glory",
     "currentLevel": "A",
     "MMR": "6",
@@ -16,8 +16,8 @@
     "totalScore": 550
   },
   {
-    "FirstName": "Smoopsie",
-    "lastName": "poo",
+    "firstName": "Anne",
+    "lastName": "James",
     "currentLevel": "D",
     "MMR": "8",
     "badges": 10,
