@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import AuthHeader from '../../components/AuthHeader/AuthHeader'
-import SideBar from '../../components/SideBar/SideBar'
+import AuthHeader from '../../components/AuthHeader/AuthHeader.jsx'
+import SideBar from '../../components/SideBar/SideBar.jsx'
 import Profile from '../../assets/Profile.png'
 import './SingleUserStatistics.css'
-import BarChart from '../../components/BarChart/BarChart'
+import BarChart from '../../components/BarChart/BarChart.jsx'
 import { datafake } from '../../dataFake'
 import { Colors } from 'chart.js';
 

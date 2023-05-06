@@ -1,14 +1,14 @@
-export const validateMinMax = (str,min,max) => {
-    if(str.length < min || str.length > max){
-        return false
-    } return true
+export const validateMinMax = (str,min,max,val) => {
+    if(val.length < min || val.length > max){
+        return {isSuccess:false, errorMessage: `${str} does not meet the requirements of minimum ${min} letters or max ${max} letters`}
+    } return {isSuccess:true, errorMessage:''}
 }
 
 export const validateEmail = (str) => {
  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(str)){
-    return true
+    return {isSuccess:true, errorMessage:''}
   }
-    return (false)
+    return {isSuccess:false, errorMessage:'email is not Valid'}
 }
 
 //To check a password between 6 to 20 characters which contain at least one numeric digit, one uppercase and one lowercase letter

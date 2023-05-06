@@ -49,15 +49,19 @@
 .form_name {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    margin: 30px 0px 30px 0px;
-    align-items: center;
+    justify-content: space-evenly;
+    margin: 0px 0px 0px 0px;
+    width: 500px;
+    align-self: center;
+    height: 60px;
+    align-items: flex-start;
 }
 
 .mail_extra {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
 }
 
 .form_extra {
@@ -67,18 +71,9 @@
     hyphens: auto;
     border-radius: 10px;
     background-color: darkgray;
-}
-
-.error_div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 500px
-}
-.contact_error {
-    color: red;
-    font-size:x-small;
-    /* font-weight: lighter; */
+    width: 400px;
+    padding-right: 3px;
+    padding-left: 3px;
 }
  
 .flyzone_adress {
