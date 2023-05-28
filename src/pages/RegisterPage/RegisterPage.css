@@ -61,7 +61,7 @@
     top:50%;
     left:80%;
     transform: translateY(-50%);
-    color: black;
+    color: yellow;
     cursor: pointer;
 }
 
@@ -74,6 +74,6 @@
     top:50%;
     left:80%;
     transform: translateY(-50%);
-    color: black;
+    color: yellow;
     cursor: pointer;
 }

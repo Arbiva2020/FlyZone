@@ -61,7 +61,7 @@ const ContactPage = () => {
                value={contactObject.lastName}
                onBlur={(e) => handleChange(e.target.name, e.target.value)}
                checkErrorsFunc={validateMinMax}
-               errorFuncParams={['firstName', 3, 20]}
+               errorFuncParams={['lastName', 3, 20]}
                setIsFormValid={setIsFormValid}
             />
           </div>

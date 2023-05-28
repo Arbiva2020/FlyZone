@@ -1,24 +1,132 @@
 import React, { useState } from 'react'
-import AuthHeader from '../../components/AuthHeader/AuthHeader.jsx'
-import SideBar from '../../components/SideBar/SideBar.jsx'
+import AuthHeader from '../../components/AuthHeader/AuthHeader'
+import SideBar from '../../components/SideBar/SideBar'
 import Profile from '../../assets/Profile.png'
 import './SingleUserStatistics.css'
-import BarChart from '../../components/BarChart/BarChart.jsx'
-import { datafake } from '../../dataFake'
-import { Colors } from 'chart.js';
+import BarChart from '../../components/BarChart/BarChart'
+import PieChart from '../../components/PieChart/PieChart'
+import LineChart from '../../components/LineChart/LineChart'
+import { lineData, pieData, datafake } from '../../dataFake'
+import { Chart as ChartJS, Colors } from 'chart.js/auto'
+
+ChartJS.register(
+  Colors
+  ); 
 
 function SingleUserStatistics() {
-  // Chart.register(Colors);
   const [singleuserData, setSingleuserData] = useState({
     labels: datafake.map((data) => data.id), 
     datasets: [
       {
-        label: "Users' collisions", 
+        label: "Collisions", 
         data: datafake.map((data) => data.collisions),
-        backgrounColor: ["#ffffff"]
+        backgroundColor: "aqua", 
+        borderColor: "white"
+      },
+      {
+        label: "Avg. Score", 
+        data: datafake.map((data) => data.avgScore),
+        backgroundColor: "blue", 
+        borderColor: "white"
+      },
+      {
+        label: "Avg. Score", 
+        data: datafake.map((data) => data.battary),
+        backgroundColor: "white", 
+        borderColor: "white"
+      },
+      {
+        label: "Avg. Score", 
+        data: datafake.map((data) => data.points),
+        backgroundColor: "pink", 
+        borderColor: "white"
       }
     ]
   })
+
+
+  const min = Math.ceil(0);
+  const max = Math.floor(255);
+  let rgbVal1 = Math.floor(Math.random() * (max - min + 1) + min)
+  let rgbVal2 = Math.floor(Math.random() * (max - min + 1) + min)
+  let rgbVal3 = Math.floor(Math.random() * (max - min + 1) + min)
+  let backgroundcolor = []
+
+  let rgbGenerate = `rgb(${rgbVal1}, ${rgbVal2}, ${rgbVal3})`
+  console.log(rgbGenerate)
+  // const randomRGB = () => `rgb(${rgbVal}, ${rgbVal}, ${rgbVal})`;
+  // function generateColor(){
+  //   for (const key in pieData){
+  //     return (`${key}: ${rgbGenerate}`)
+  //   }
+  // }
+
+  // for (key in Object.keys(pieData)){
+  //   let rgbVal1 = Math.floor(Math.random() * (max - min + 1) + min)
+  //   let rgbVal2 = Math.floor(Math.random() * (max - min + 1) + min)
+  //   let rgbVal3 = Math.floor(Math.random() * (max - min + 1) + min)
+  //   backgroundcolor.push('rgba('+rgbVal1+', '+rgbVal2+', '+rgbVal3+', 0.2)')
+  // }
+  const [singleuserPieData, setSingleuserPieData] = useState({
+    labels: Object.keys(pieData), 
+    datasets: [
+      {
+        data: Object.values(pieData), 
+        borderColor: "white",
+        // backgroundColor: 
+        // backgroundColor: backgroundcolor,
+      },
+      // {
+      //   label: "Crash", 
+      //   data: pieData.crash,
+      //   backgroundColor: "aqua", 
+      //   borderColor: "white"
+      // },
+      // {
+      //   label: "Battary", 
+      //   data: pieData.battary,
+      //   backgroundColor: "blue", 
+      //   borderColor: "white"
+      // },
+      // {
+      //   label: "Targeted", 
+      //   data: pieData.targeted,
+      //   backgroundColor: "white", 
+      //   borderColor: "white"
+      // },
+      // {
+      //   label: "Wind", 
+      //   data: pieData.wind,
+      //   backgroundColor: "pink", 
+      //   borderColor: "white"
+      // }, 
+      // {
+      //   label: "Balancing", 
+      //   data: pieData.balancing,
+      //   backgroundColor: "green", 
+      //   borderColor: "white"
+      // }, 
+      // {
+      //   label: "TimeOut", 
+      //   data: pieData.timeOut,
+      //   backgroundColor: "yellow", 
+      //   borderColor: "white"
+      // }
+    ]
+  })
+
+  const [singleuserLineData, setSingleuserLineData] = useState({
+    labels: Object.keys(lineData),
+    datasets: [
+      {
+        label: lineData.headline,
+        data: Object.values(lineData), 
+        borderColor: "pink",
+        backgroundColor: "pink"
+      }
+    ] 
+})
+
 
   return (
     <div className='singleUser_main'>
@@ -30,10 +138,10 @@ function SingleUserStatistics() {
         <div className='singleUser_charts'>
           <div className='singleUser_headline'>Users' Statistics</div>
           <div className='singleUser_upper_chart_section'><BarChart chartData={singleuserData} /></div>
-          <div className='singleUser_lower_chart_section'>more charts</div>
+          <div className='singleUser_lower_chart_section'><LineChart chartData={singleuserLineData} /></div>
           <div className='singleUser_pie_section'>
-            <div className='singleUser_pie_left'>pie</div>
-            <div className='singleUser_pie_right'>pie</div>
+            <div className='singleUser_pie_left'><PieChart chartData={singleuserPieData} /></div>
+            <div className='singleUser_pie_right'><PieChart chartData={singleuserPieData} /></div>
           </div>
         </div>
         <div className='singleUser_profile'>

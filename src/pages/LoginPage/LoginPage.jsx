@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Header from '../../components/Header/Header'
 import Button from '../../components/Generic/Button/Button'
 import Input from '../../components/Generic/Input/Input'
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai"
-import { loginDefaultState } from '../../constants/FormDeaults'
+import { loginDefaultState, loginDefaultValidState } from '../../constants/FormDeaults'
 import { validatePassword, validateMinMax } from '../../validators/validators'
 import './LoginPage.css'
 
@@ -12,6 +12,23 @@ const LoginPage = () => {
   const [errors,setErrors] = useState([])
   const [showPassword, setShowPassword] = useState(false)
   const [showEye, setShowEye] = useState(false)
+  const [isFormValid,setIsFormValid] = useState(loginDefaultValidState)
+  const [isFormDisabled, setIsFormDisabled] = useState(true)
+
+  useEffect(()=>{
+    for (const key in isFormValid){
+      if(isFormValid[key] === false){
+        if(!isFormDisabled){
+          setIsFormDisabled(true)
+        }
+      } else{
+        if(isFormDisabled){
+          setIsFormDisabled(false)
+        }
+      }
+    }
+    console.log(isFormValid, isFormDisabled)
+  },[isFormValid])
 
 
   const toggleShowPassword = () => {
@@ -51,7 +68,6 @@ const LoginPage = () => {
     console.log(loginObject)
     //take an action
   }
-console.log(errors)
   
 
   return (
@@ -65,6 +81,7 @@ console.log(errors)
                name={"userName"} 
                value={loginObject.userName}
                placeholder="User Name"
+               setIsFormValid={setIsFormValid}
                onChange={(e) => handleChange(e.target.name, e.target.value)}
             />
             <div className='wrapInputAndIcon'>
@@ -72,8 +89,12 @@ console.log(errors)
                 name={"password"} 
                 value={loginObject.password}
                 placeholder="Password"
+                setIsFormValid={setIsFormValid}
+                onBlur={(e) => handleChange(e.target.name, e.target.value)}
                 type={showPassword ? "text" : "password"}
                 onChange={(e) => handleChange(e.target.name, e.target.value)}
+                checkErrorsFunc={validateMinMax}
+                errorFuncParams={['Password', 6, 20]}
               />
                {showEye ? <AiFillEye className="eyeIcon" onClick={toggleShowPassword}/> : <AiFillEyeInvisible className="eyeCanceldIcon" onClick={toggleShowPassword}/>}
             </div>
@@ -84,6 +105,7 @@ console.log(errors)
               text={"Login"}
               isLightStyle
               onClick={handleSubmitForm}
+              isDisabled={isFormDisabled}
               to="/allStats"
             />
         </div>

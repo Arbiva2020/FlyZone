@@ -2,12 +2,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size:x-small;
+    position: relative;
+    /* align-self: baseline; */
 }
 
 .input_Control {
     height: 30px;
     border-radius: 10px;
-    /* width: 95%; */
     padding-left: 3px;
     padding-right: 3px;
     background-color: darkgrey;
@@ -15,18 +17,16 @@
 }
 
 .contact_error{
-    /* background-color: yellow; */
-    width: 150px;
+    width: 175px;
     padding-left: 3px;
     padding-right: 3px;
     color: red;
     font-size:x-small;
+    align-self: baseline;
 }
 
 .contact_error_blank {
     background-color: #000000;
-    /* height: 30px; */
-    /* border-radius: 10px; */
     padding-left: 3px;
     padding-right: 3px;
     color: yellow;

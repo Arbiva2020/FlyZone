@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Header from '../../components/Header/Header'
 import Button from '../../components/Generic/Button/Button'
 import Input from '../../components/Generic/Input/Input'
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai"
-import { registerDefaultState } from '../../constants/FormDeaults' 
+import { registerDefaultState, registerDefaultValidState } from '../../constants/FormDeaults' 
 import { validateEmail, validateMinMax, validatePassword } from '../../validators/validators'
 import './RegisterPage.css'
 
@@ -14,6 +14,8 @@ const RegisterPage = () => {
   const [showConfirmed, setShowConfirmed] = useState(false)
   const [showEye, setShowEye] = useState(false)
   const [showConfirmedEye, setShowConfirmedEye] = useState(false)
+  const [isFormValid,setIsFormValid] = useState(registerDefaultValidState)
+  const [isFormDisabled, setIsFormDisabled] = useState(true)
 
   const toggleShowPassword = () => {
     setShowPassword(!showPassword)
@@ -28,6 +30,21 @@ const RegisterPage = () => {
   const handleChange = (name,value) => {
     setRegisterObject({...registerObject, [name]:value})
   }
+
+  useEffect(()=>{
+    for (const key in isFormValid){
+      if(isFormValid[key] === false){
+        if(!isFormDisabled){
+          setIsFormDisabled(true)
+        }
+      } else{
+        if(isFormDisabled){
+          setIsFormDisabled(false)
+        }
+      }
+    }
+    console.log(isFormValid, isFormDisabled)
+  },[isFormValid])
 
   const handleSubmitForm = () => {
     setErrors([])
@@ -75,28 +92,42 @@ console.log(errors)
           <Input 
                name={"firstName"} 
                value={registerObject.firstName}
-               onChange={(e) => handleChange(e.target.name, e.target.value)}
+              //  onChange={(e) => handleChange(e.target.name, e.target.value)}
                placeholder="First Name"
+               onBlur={(e) => handleChange(e.target.name, e.target.value)}
+               checkErrorsFunc={validateMinMax}
+               errorFuncParams={['firstName', 3, 20]}
+               setIsFormValid={setIsFormValid}
             />
             <Input 
                name={"lastName"} 
                value={registerObject.lastName}
-               onChange={(e) => handleChange(e.target.name, e.target.value)}
+              //  onChange={(e) => handleChange(e.target.name, e.target.value)}
                placeholder="Last Name"
+               onBlur={(e) => handleChange(e.target.name, e.target.value)}
+               checkErrorsFunc={validateMinMax}
+               errorFuncParams={['lastName', 3, 20]}
+               setIsFormValid={setIsFormValid}
             />
                <Input 
                name={"email"} 
                value={registerObject.email}
-               onChange={(e) => handleChange(e.target.name, e.target.value)}
+              //  onChange={(e) => handleChange(e.target.name, e.target.value)}
                placeholder="email"
+               onBlur={(e) => handleChange(e.target.name, e.target.value)}
+               checkErrorsFunc={validateEmail}
+               setIsFormValid={setIsFormValid}
             />
             <div className='wrapIconAndInput'>
               <Input 
                 name={"password"} 
                 value={registerObject.password}
-                onChange={(e) => handleChange(e.target.name, e.target.value)}
+                // onChange={(e) => handleChange(e.target.name, e.target.value)}
                 placeholder="Password"
                 type={showPassword ? "text" : "password"}
+                onBlur={(e) => handleChange(e.target.name, e.target.value)}
+                checkErrorsFunc={validateMinMax}
+                errorFuncParams={['Password', 6, 20]}
               />
                {showEye ? <AiFillEye className="eyeIcon" onClick={toggleShowPassword}/> : <AiFillEyeInvisible className="eyeCanceldIcon" onClick={toggleShowPassword}/>}
             </div>
@@ -104,9 +135,12 @@ console.log(errors)
               <Input 
                 name={"confirmedPassword"} 
                 value={registerObject.confirmedPassword}
-                onChange={(e) => handleChange(e.target.name, e.target.value)}
+                // onChange={(e) => handleChange(e.target.name, e.target.value)}
                 placeholder="Confirm Password"
                 type={showConfirmed ? "text" : "password"}
+                onBlur={(e) => handleChange(e.target.name, e.target.value)}
+                checkErrorsFunc={validateMinMax}
+                errorFuncParams={['Password', 6, 20]}
               />
               {showConfirmedEye ? <AiFillEye className="eyeIcon" onClick={toggleShowConfirmedPassword}/> : <AiFillEyeInvisible className="eyeCanceldIcon" onClick={toggleShowConfirmedPassword}/>}
             </div>
@@ -115,6 +149,7 @@ console.log(errors)
         <div className='registerButton'>
           <Button 
             text={"Submit"}
+            isDisabled={isFormDisabled}
             onClick={handleSubmitForm}
             isLightStyle
           />

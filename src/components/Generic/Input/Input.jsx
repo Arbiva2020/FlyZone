@@ -26,7 +26,6 @@ const Input = ({name, type="text", placeholder="", onBlur, customStyles={}, valu
             style={customStyles}
             onBlur={handleOnBlur}
           />
-          {/* {error && <p className='contact_error'>{error}</p>} */}
           {error ? <p className='contact_error'>{error}</p> : <p className='contact_error_blank'>{error}</p>}
     </div>
   )
