@@ -1,55 +1,46 @@
-import React, { useState } from 'react'
-import './SideBar.css'
-import { Link } from 'react-router-dom'
 import { AiOutlineDotChart, AiOutlineEye } from "react-icons/ai"
 import { HiOutlineClipboardList } from "react-icons/hi"
 import { MdQueryStats } from 'react-icons/md'
 import { SlMagnifier } from 'react-icons/sl'
 
-const SidebarData = () => {
-    let sidebarData = [
+export const sidebarData = {
+     data: [
         {
+            id: 1,
             title: "search", 
             path: "", 
             icon: <SlMagnifier/>, 
             isActive: false,
-            className: "className={sidebarStyle ? 'sidebar_icon_div' : 'sidebar_icon_div_active'}"
         }, 
         {
+            id: 2,
             title: "mainView", 
             path: "/mainView", 
-            icon: <AiOutlineEye />, 
+            icon: <AiOutlineEye/>, 
             isActive: false,
-            className: "className={sidebarStyle ? 'sidebar_icon_div' : 'sidebar_icon_div_active'}"
         }, 
         {
+            id: 3,
             title: "userStatistics", 
             path: "/userStatistics", 
-            icon: <MdQueryStats />, 
+            icon: <MdQueryStats/>, 
             isActive: false,
-            className: "className={sidebarStyle ? 'sidebar_icon_div' : 'sidebar_icon_div_active'}"
         }, 
         {
+            id: 4,
             title: "report", 
             path: "/reports", 
-            icon: <HiOutlineClipboardList />, 
+            icon: <HiOutlineClipboardList/>, 
             isActive: false,
-            className: "className={sidebarStyle ? 'sidebar_icon_div' : 'sidebar_icon_div_active'}"
         }, 
         {
+            id: 5,
             title: "ClassStats", 
             path: "/allStats", 
-            icon: <AiOutlineDotChart />, 
+            icon: <AiOutlineDotChart/>, 
             isActive: false,
-            className: "className={sidebarStyle ? 'sidebar_icon_div' : 'sidebar_icon_div_active'}"
         }
     ]
-    console.log({sidebarData})
 
-
-  return (
-    {}    
-    )
 }
 
-export default SidebarData

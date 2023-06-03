@@ -65,53 +65,31 @@ function SingleUserStatistics() {
   //   let rgbVal1 = Math.floor(Math.random() * (max - min + 1) + min)
   //   let rgbVal2 = Math.floor(Math.random() * (max - min + 1) + min)
   //   let rgbVal3 = Math.floor(Math.random() * (max - min + 1) + min)
-  //   backgroundcolor.push('rgba('+rgbVal1+', '+rgbVal2+', '+rgbVal3+', 0.2)')
+  //   backgroundcolor.push('rgba('+rgbVal1+', '+rgbVal2+', '+rgbVal3+',)')
   // }
   const [singleuserPieData, setSingleuserPieData] = useState({
     labels: Object.keys(pieData), 
     datasets: [
       {
         data: Object.values(pieData), 
-        borderColor: "white",
-        // backgroundColor: 
-        // backgroundColor: backgroundcolor,
+        borderColor: [
+          'rgb(0, 0, 0)',
+          'rgb(0, 0, 0)',
+          'rgb(0, 0, 0)',
+          'rgb(0, 0, 0)',
+          'rgb(0, 0, 0)',
+          'rgb(0, 0, 0)',
+        ],
+        backgroundColor: [
+          'rgb(255, 99, 132)',
+          'rgb(54, 162, 235)',
+          'rgb(255, 206, 86)',
+          'rgb(75, 192, 192)',
+          'rgb(153, 102, 255)',
+          'rgb(255, 159, 64)',
+        ],
+        borderWidth:1
       },
-      // {
-      //   label: "Crash", 
-      //   data: pieData.crash,
-      //   backgroundColor: "aqua", 
-      //   borderColor: "white"
-      // },
-      // {
-      //   label: "Battary", 
-      //   data: pieData.battary,
-      //   backgroundColor: "blue", 
-      //   borderColor: "white"
-      // },
-      // {
-      //   label: "Targeted", 
-      //   data: pieData.targeted,
-      //   backgroundColor: "white", 
-      //   borderColor: "white"
-      // },
-      // {
-      //   label: "Wind", 
-      //   data: pieData.wind,
-      //   backgroundColor: "pink", 
-      //   borderColor: "white"
-      // }, 
-      // {
-      //   label: "Balancing", 
-      //   data: pieData.balancing,
-      //   backgroundColor: "green", 
-      //   borderColor: "white"
-      // }, 
-      // {
-      //   label: "TimeOut", 
-      //   data: pieData.timeOut,
-      //   backgroundColor: "yellow", 
-      //   borderColor: "white"
-      // }
     ]
   })
 

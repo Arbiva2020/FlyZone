@@ -5,6 +5,7 @@ import { HiCheck } from "react-icons/hi"
 import AuthHeader from '../../components/AuthHeader/AuthHeader'
 import Button from '../../components/Generic/Button/Button'
 import PaymentForm from './PaymentForm'
+import Sidebar from "../../components/SideBar/SideBar"
 
 
 const PaymentProgramPage = () => {
