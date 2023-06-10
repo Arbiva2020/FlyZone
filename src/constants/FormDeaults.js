@@ -14,4 +14,10 @@ export const createProfileDefaultState = {file:'', userName:'', firstName:'', la
 
 export const createProfileDefaultValidState = {file:false, userName:false, firstName:false, lastName:false, email:false, roll:false, organization:false}
 
+export const searchDefaultState = {search: ''}
+
+export const searchDefaultValidState = {search: false}
+
+
+
 

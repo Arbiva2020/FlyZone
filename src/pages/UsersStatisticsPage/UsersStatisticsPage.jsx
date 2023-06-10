@@ -3,13 +3,17 @@ import AuthHeader from '../../components/AuthHeader/AuthHeader'
 import SideBar from '../../components/SideBar/SideBar'
 import "./UsersStatisticsPage.css"
 import fakeData from '../../fakeData.json'
-import { useSortBy, useTable } from "react-table"
+import { useFilters, useSortBy, useTable } from "react-table"
 import { FaSortAmountDownAlt } from "react-icons/fa"
 import { FaSortAmountDown } from "react-icons/fa"
+import { FaSearch } from "react-icons/fa"
 import Input from '../../components/Generic/Input/Input'
+import { searchDefaultState, searchDefaultValidState } from '../../constants/FormDeaults'
+
 
 const UsersStatisticsPage = () => {
-  const [inputContent, setInputContent] = React.useState()
+const [filterInput, setFilterInput] = React.useState("")
+
   const data = React.useMemo(() => fakeData, []);
   const columns = React.useMemo(
     () => [
@@ -40,7 +44,16 @@ const UsersStatisticsPage = () => {
     ], []
   );
 
-  const {getTableProps, getTableBodyProps, headerGroups, rows, prepareRow} = useTable({columns, data}, useSortBy)
+
+  const handleFilterChange = (event) => {
+    // const value = event.target.value
+    setFilter("firstName", event.target.value)
+    setFilterInput(event.target.value);
+  }
+
+
+
+  const {getTableProps, getTableBodyProps, headerGroups, rows, prepareRow, setFilter} = useTable({columns, data}, useFilters, useSortBy)
   return (
     <div>
       <div className='users_main'>
@@ -51,20 +64,53 @@ const UsersStatisticsPage = () => {
         </div>
           <div className='users_data'>
             <div className='users_headline'>Users Stats</div>
-            <div className='users_tableOperations'>
+            <div className='users_table_operations'>
               <Input 
-                name={""} 
-                // value={loginObject.password}
+                name={"search"}
+                value={filterInput}
                 placeholder="Search"
-                // setIsFormValid={setIsFormValid}
-                // onBlur={(e) => handleChange(e.target.name, e.target.value)}
-                // type={showPassword ? "text" : "password"}
-                // onChange={(e) => handleChange(e.target.name, e.target.value)}
-                // checkErrorsFunc={validateMinMax}
-                // errorFuncParams={['Password', 6, 20]}
+                onChange={handleFilterChange}
                 customStyles={{width:"300px"}}
+                onBlur={(event) => handleFilterChange(event.target.name, event.target.value)}
               />
+              <i className='users_icon'><FaSearch /></i>
             </div>
+            <div className='users_chart'>
+              <table {...getTableProps()}>
+                <thead>
+                  {headerGroups.map((headerGroup) => (
+                    <tr {...headerGroup.getHeaderGroupProps()}className='usersStats_tr'>
+                      {headerGroup.headers.map((column) => (
+                        <th {...column.getHeaderProps(column.getSortByToggleProps())} className='usersStats_th'>
+                          {column.render("Header")}
+                          <span className='usersStats_span'>
+                            {column.isSorted
+                            ? column.isSortedDesc
+                            ? <FaSortAmountDown />
+                            : <FaSortAmountDownAlt />
+                            : ''}
+                          </span>
+                        </th>
+                      ))}
+                    </tr>
+                  ))}
+                </thead>
+                <tbody {...getTableBodyProps()}>
+                  {rows.map((row, i) => {
+                    prepareRow(row)
+                    return (
+                      <tr {...row.getRowProps()}>
+                        {row.cells.map((cell) => (
+                          <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                        ))}
+                      </tr>
+                    )
+                  })}
+                </tbody>
+              </table>
+            </div>
+
+            <div className='users_headline'>Stats Summary</div>
             <div className='users_chart'>
               <table {...getTableProps()}>
                 <thead>

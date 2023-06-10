@@ -28,13 +28,15 @@
     width: 75%;
     margin-right: 20px;
     padding: 0px 20px 20px 20px;
+    position:inherit;
+    margin-left: 100px;
 }
 
 .users_sideContent {
     display: flex;
     flex-direction: row;
     width: 10%;
-    /* position: absolute; */
+    position: absolute;
 }
 
 .users_chart {
@@ -43,7 +45,7 @@
     border-color: #ffffff;
     border-radius: 20px; */
     margin: 20px 0px 20px 0px;
-    height: 33vh;
+    height: 33vh;    
 }
 
 .users_summary {
@@ -120,4 +122,18 @@ tbody td:hover:before {
 
 .usersStats_th {
     
+}
+
+.users_icon {
+  position: absolute;
+  display: flex;
+  padding-right: 10px;
+  color: #000000
+}
+
+.users_table_operations {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: end;
 }

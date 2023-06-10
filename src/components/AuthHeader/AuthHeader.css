@@ -12,11 +12,12 @@
     padding: 0;
     /* border-style: solid;
     border-color: #ffffff;
-    border-width: 1px; */
+    border-width: 0px 0px 0.1px 0px; */
 }
 
 .authHeader_title {
     align-self: center;
+    font-weight: lighter;
 }
 
 .authHeader_menu {

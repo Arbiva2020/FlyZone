@@ -9,8 +9,10 @@ const AuthHeader = () => {
   return (
     <div className='auth_header'>
       <div className='auth_logo_div'>
-        <img src={Logo1} className="authHeader_logo" alt="logo"/>
-        <h3 className='authHeader_title'>hello</h3>
+        <Link to="/ ">
+          <img src={Logo1} className="authHeader_logo" alt="logo"/>
+        </Link>
+        <h3 className='authHeader_title'>Hello, {}</h3>
       </div>
       <div className='authHeader_menu'>
         <Link className='authHeader_link' >Logout</Link>

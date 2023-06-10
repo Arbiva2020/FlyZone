@@ -42,7 +42,10 @@ export const lineData =
         scoreForth: 10, 
         scoreFifth: 40, 
         scoreSixth: 80,
-        scoreSeventh: 50  
+        scoreSeventh: 50,  
+        scoreEight: 10, 
+        scoreNineth: 40, 
+        scoreTenth: 80,
     }
 
 

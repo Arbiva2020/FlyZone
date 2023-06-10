@@ -18,7 +18,20 @@ ChartJS.register(
 )
 
 function LineChart ({chartData}){
-    const options = {}
+ 
+  const options = {
+    plugins: {
+      legend: {
+        position: 'top',
+        // rtl : true,
+        labels: {
+          usePointStyle: true,
+          pointStyle: 'circle',
+          padding: 20,
+        }
+      }
+    },
+}
   return <Line data={chartData} options={options}></Line>
 }
 

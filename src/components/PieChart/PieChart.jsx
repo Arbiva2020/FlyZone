@@ -16,7 +16,19 @@ ChartJS.register(
     ); 
 
 function PieChart ({chartData}) {
-    const options ={}
+  const options = {
+    plugins: {
+      legend: {
+        position: 'left',
+        // rtl : true,
+        labels: {
+          usePointStyle: true,
+          pointStyle: 'circle',
+          padding: 20,
+        }
+      }
+    },
+}
   return <Pie data={chartData} options={options}></Pie>;
 }
 

@@ -67,13 +67,36 @@
 }
 
 .singleUser_upper_chart_section{
+    display: flex;
+    flex-direction: row;
+    height: 33vh;
+} 
+
+.singleUser_bar_left {
     border-style: solid;
     border-width: 1px;
     border-color: #ffffff;
     border-radius: 20px;
-    margin: 20px 0px 20px 0px;
-    height: 33vh;
-} 
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin: 0px 20px 0px 0px;
+    padding-top: 3%;
+}
+
+.singleUser_bar_right {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ffffff;
+    border-radius: 20px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin: 0px 0px 0px 20px;
+    padding-top: 3%;
+}
 
 .singleUser_lower_chart_section{
     border-style: solid;
@@ -97,6 +120,9 @@
     border-radius: 20px;
     margin: 0px 20px 0px 0px;
     width: 50%;
+    display: flex;
+    justify-content: center;
+    position: relative;
 }
 
 .singleUser_pie_right {
@@ -106,5 +132,8 @@
     border-radius: 20px;
     margin: 0px 0px 0px 20px;
     width: 50%;
+    display: flex;
+    justify-content: center;
+    position: relative;
 }
 

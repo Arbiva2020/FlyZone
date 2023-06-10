@@ -13,6 +13,7 @@ import ErrorPage from '../pages/ErrorPage/ErrorPage'
 import MainViewPage from '../pages/MainViewPage/MainViewPage'
 import PaymentProgramPage from '../pages/PaymentProgramPage/PaymentProgramPage'
 import SubscriptionPage from '../pages/SubscriptionPage/SubscriptionPage'
+import DemoPage from '../pages/DemoPage/DemoPage'
 
 const Router = () => {
   return (
@@ -32,7 +33,7 @@ const Router = () => {
             <Route path="paymentProgram" element={<PaymentProgramPage />} />
             <Route path="subscribe" element={<SubscriptionPage />} />
             <Route path="*" element={<ErrorPage />} />
-
+            <Route path="demo" element={<DemoPage/>} />
         </Routes>
     </BrowserRouter>
   )

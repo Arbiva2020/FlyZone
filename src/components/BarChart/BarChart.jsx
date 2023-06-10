@@ -14,8 +14,38 @@ import { Colors } from 'chart.js'
     Colors
     );
 
+
 function BarChart ({chartData}) {
-  const options ={}
+  const screenWidth = window.innerWidth
+  console.log(screenWidth)
+  const options = {
+    plugins: {
+      legend: {
+        position: 'left',
+        // rtl : true,
+        labels: {
+          usePointStyle: true,
+          pointStyle: 'circle',
+          padding: 20,
+          fontSize: 10,
+        }
+      }
+    },
+}
+const optionsB = {
+  plugins: {
+    legend: {
+      position: 'top',
+      // rtl : true,
+      labels: {
+        usePointStyle: true,
+        pointStyle: 'circle',
+        padding: 20,
+        fontSize: 10,
+      }
+    }
+  },
+}
   return <Bar data={chartData} options={options}></Bar>;
 }
 

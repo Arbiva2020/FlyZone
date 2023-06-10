@@ -1,0 +1,18 @@
+.demo_main {
+    color: white;
+    font-family: lexend;
+    position: relative;
+}
+
+.demo_headline {
+    text-align: center;
+    font-size: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.demo_video {
+    width: 900px;
+    height: 600px;
+}

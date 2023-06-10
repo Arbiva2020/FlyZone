@@ -44,29 +44,7 @@ function SingleUserStatistics() {
     ]
   })
 
-
-  const min = Math.ceil(0);
-  const max = Math.floor(255);
-  let rgbVal1 = Math.floor(Math.random() * (max - min + 1) + min)
-  let rgbVal2 = Math.floor(Math.random() * (max - min + 1) + min)
-  let rgbVal3 = Math.floor(Math.random() * (max - min + 1) + min)
-  let backgroundcolor = []
-
-  let rgbGenerate = `rgb(${rgbVal1}, ${rgbVal2}, ${rgbVal3})`
-  console.log(rgbGenerate)
-  // const randomRGB = () => `rgb(${rgbVal}, ${rgbVal}, ${rgbVal})`;
-  // function generateColor(){
-  //   for (const key in pieData){
-  //     return (`${key}: ${rgbGenerate}`)
-  //   }
-  // }
-
-  // for (key in Object.keys(pieData)){
-  //   let rgbVal1 = Math.floor(Math.random() * (max - min + 1) + min)
-  //   let rgbVal2 = Math.floor(Math.random() * (max - min + 1) + min)
-  //   let rgbVal3 = Math.floor(Math.random() * (max - min + 1) + min)
-  //   backgroundcolor.push('rgba('+rgbVal1+', '+rgbVal2+', '+rgbVal3+',)')
-  // }
+ 
   const [singleuserPieData, setSingleuserPieData] = useState({
     labels: Object.keys(pieData), 
     datasets: [
@@ -115,7 +93,14 @@ function SingleUserStatistics() {
         </div>
         <div className='singleUser_charts'>
           <div className='singleUser_headline'>Users' Statistics</div>
-          <div className='singleUser_upper_chart_section'><BarChart chartData={singleuserData} /></div>
+          <div className='singleUser_upper_chart_section'>
+            <div className='singleUser_bar_left'>
+              <BarChart chartData={singleuserData} />
+            </div>
+            <div className='singleUser_bar_right'>
+              <BarChart chartData={singleuserData} />
+            </div>
+          </div>
           <div className='singleUser_lower_chart_section'><LineChart chartData={singleuserLineData} /></div>
           <div className='singleUser_pie_section'>
             <div className='singleUser_pie_left'><PieChart chartData={singleuserPieData} /></div>
