@@ -58,3 +58,19 @@ export const pieData =
         balancing: 15, 
         timeOut: 10,
     }
+
+    export const users = 
+    [
+        {
+            id: 1,
+            admin: true, 
+            firstName: "Shmoopsie",
+            lastName: "poo", 
+        }, 
+        {
+            id: 2,
+            admin: false, 
+            firstName: "Googlie",
+            lastName: "bear", 
+        }
+    ]

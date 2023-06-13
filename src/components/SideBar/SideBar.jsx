@@ -19,7 +19,7 @@ const SideBar = () => {
                      className={sideBarActiveId !== data.id ? 'sidebar_icon_div' : 'sidebar_icon_div_active'} 
                      onClick={() => toggleStyle(data.id)}
                     >
-                     <Link className='sidebar_link'>{data.icon}</Link>
+                     <Link className='sidebar_link' to={data.path}>{data.icon}</Link>
                 </div>
             ))}
         </div>

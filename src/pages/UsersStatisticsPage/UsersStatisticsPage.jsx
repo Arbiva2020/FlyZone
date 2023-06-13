@@ -8,11 +8,14 @@ import { FaSortAmountDownAlt } from "react-icons/fa"
 import { FaSortAmountDown } from "react-icons/fa"
 import { FaSearch } from "react-icons/fa"
 import Input from '../../components/Generic/Input/Input'
+import SearchPopup from '../../components/SearchPopup/SearchPopup'
+import Popup from '../../components/Popup/Popup'
 import { searchDefaultState, searchDefaultValidState } from '../../constants/FormDeaults'
 
 
 const UsersStatisticsPage = () => {
 const [filterInput, setFilterInput] = React.useState("")
+const [popupVisibility, setPopupVisibility] = React.useState(false)
 
   const data = React.useMemo(() => fakeData, []);
   const columns = React.useMemo(
@@ -46,18 +49,26 @@ const [filterInput, setFilterInput] = React.useState("")
 
 
   const handleFilterChange = (event) => {
-    // const value = event.target.value
+    const value = event.target.value
     setFilter("firstName", event.target.value)
-    setFilterInput(event.target.value);
+    setFilterInput(value);
   }
 
-
+const popupClosehandler = (e) => {
+  setPopupVisibility(e);
+}
 
   const {getTableProps, getTableBodyProps, headerGroups, rows, prepareRow, setFilter} = useTable({columns, data}, useFilters, useSortBy)
   return (
     <div>
       <div className='users_main'>
       <AuthHeader />
+      <SearchPopup 
+        onClose={popupClosehandler}
+        show= {popupVisibility}
+        title = ""
+      />
+      <Popup />
       <div className='users_content'>
         <div className='users_sideContent'>
           <SideBar />

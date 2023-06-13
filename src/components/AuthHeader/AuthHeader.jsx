@@ -1,7 +1,7 @@
 import React from 'react'
 import "./AuthHeader.css"
 import { Link } from 'react-router-dom'
-import { AiOutlineHome } from "react-icons/ai"
+import { FaRegSun } from "react-icons/fa"
 import Logo1 from '../../assets/Logo1.png'
 import Profile from '../../assets/Profile.png'
 
@@ -17,7 +17,7 @@ const AuthHeader = () => {
       <div className='authHeader_menu'>
         <Link className='authHeader_link' >Logout</Link>
         <Link className='authHeader_link'>Help</Link>
-        <Link className='authHeader_link' to="/ " ><AiOutlineHome /></Link>
+        <Link className='authHeader_link' to="/ " ><FaRegSun /></Link>
         <Link className='authHeader_link' to="/createProfile">
             <img src={Profile} className="authHeader_userImage" alt="logo"/>
         </Link>

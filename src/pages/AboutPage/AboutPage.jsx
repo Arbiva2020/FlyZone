@@ -2,6 +2,7 @@ import React  from 'react'
 import "./AboutPage.css"
 import Header from '../../components/Header/Header'
 import Drone1 from '../../assets/Drone1.png';
+import { Link } from 'react-router-dom';
 
 const AboutPage = () => {
   return (
@@ -23,6 +24,7 @@ const AboutPage = () => {
                         harum voluptatum facilis doloribus, quibusdam commodi sit quam tempore adipisci repudiandae, architecto
                         illum illo deserunt quia inventore?
                         </p>
+                        <Link className='demo_link' to="/demo">For demo, click here</Link>
               </div>
                 
                         <div className='about_graphics'>

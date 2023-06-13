@@ -27,12 +27,9 @@
     width: 80%;
     align-self: center;
     line-height: 40px;
-    /* line-break: strict; */
-    /* margin-left: auto;
-    margin-right: auto; */
     font-size: small;
     text-align: justify;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
 }
 
 .about_graphics {
@@ -60,4 +57,10 @@
     position: absolute;
     left: 0;
     right: 0;
+}
+
+.demo_link {
+    color: #B943B4;
+    margin-bottom: 10%;
+    text-align: center;
 }

@@ -2,6 +2,7 @@ import React, {useRef, useState} from 'react'
 import './DemoPage.css'
 import Header from '../../components/Header/Header'
 import Media1 from '../../assets/Media1.mp4'
+import Button from '../../components/Generic/Button/Button'
 
 const DemoPage = () => {
     const [isPlaying, setIsPlaying] = useState(false)
@@ -28,7 +29,7 @@ const DemoPage = () => {
     <div className='demo_main'>
         <Header />
         <div className='demo_headline'>
-            DemoPage
+            Play Demo
         </div>
         <div className='demo_show'>
             <video 
@@ -38,11 +39,11 @@ const DemoPage = () => {
             >
             <source src={Media1} type="video/mp4"/>
             </video>
-            <div>
-                <button onClick={handleTogglePlay}>
+            <div className='demo_play'>
+                <h4 onClick={handleTogglePlay} style={isPlaying ? {color:"white"} : {color:"#B943B4"}}>
                     {isPlaying ? "Pause" : "Play"}
-                </button>
-                <progress value={progress} max="100" />
+                </h4>
+                <progress className='demo_progress' value={progress} max="100" style={{progressColor: 'rgb(185, 67, 180'}}/>
             </div>
         </div>
     </div>
