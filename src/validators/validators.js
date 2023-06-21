@@ -1,6 +1,6 @@
 export const validateMinMax = (str,min,max,val) => {
     if(val.length < min || val.length > max){
-        return {isSuccess:false, errorMessage: `${str} does not meet the requirements of minimum ${min} letters or max ${max} letters`}
+        return {isSuccess:false, errorMessage: `${str} requires ${min} letters or max ${max} letters`}
     } return {isSuccess:true, errorMessage:''}
 }
 

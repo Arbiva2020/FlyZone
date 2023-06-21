@@ -11,7 +11,7 @@ const handlePopupOpen = () => {
 
 return (
     <div className='popup_main' style={{visibility: openPopup ? "visible" : "hidden", opacity: openPopup ? "1" : "0"}}>
-        <div>
+        <div className='popup_generic'>
             Popup
             <ul className='popup'>
                     <li>

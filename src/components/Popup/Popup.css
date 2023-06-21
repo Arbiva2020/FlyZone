@@ -13,3 +13,21 @@
     transition: opacity 500ms;
     /* z-index: 1; */
 }
+
+.popup_generic {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 20px;
+    background-color: #2E2D2D;
+    color: white;
+    width: 15%;
+    height: 25%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-content: center;
+    position: absolute;
+    right: 0;
+    margin-top: 100px;
+}

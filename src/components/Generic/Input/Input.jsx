@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './Input.css'
 
-const Input = ({name, type="text", placeholder="", onBlur, customStyles={}, value, setIsFormValid, checkErrorsFunc, errorFuncParams=[]}) => {
+const Input = ({name, type="text", placeholder="", onBlur=()=>{}, onChange=()=>{}, customStyles={}, value, setIsFormValid, checkErrorsFunc, errorFuncParams=[]}) => {
   const [error,setError] = useState("")
 
   const handleOnBlur = (e) => {
@@ -25,6 +25,7 @@ const Input = ({name, type="text", placeholder="", onBlur, customStyles={}, valu
             className="input_Control"
             style={customStyles}
             onBlur={handleOnBlur}
+            onChange={onChange}
           />
           {error ? <p className='contact_error'>{error}</p> : <p className='contact_error_blank'>{error}</p>}
     </div>

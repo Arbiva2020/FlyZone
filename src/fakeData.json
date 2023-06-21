@@ -1,26 +1,29 @@
 [
   {
+    "id": "123456",
     "firstName": "Hello",
     "lastName": "World",
-    "currentLevel": 5,
-    "MMR": 4,
-    "badges": 2,
-    "totalScore": 230
+    "currentLevel": "5",
+    "MMR": "4",
+    "badges": "2",
+    "totalScore": "230"
   },
   {
+    "id": "123455",
     "firstName": "Netta",
     "lastName": "Glory",
     "currentLevel": "A",
     "MMR": "6",
-    "badges": 5,
-    "totalScore": 550
+    "badges": "5",
+    "totalScore": "550"
   },
   {
+    "id": "123454",
     "firstName": "Anne",
     "lastName": "James",
     "currentLevel": "D",
     "MMR": "8",
-    "badges": 10,
+    "badges": "10",
     "totalScore": "2671"
   }
 ]

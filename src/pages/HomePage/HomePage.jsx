@@ -28,6 +28,7 @@ const HomePage = () => {
               <h4 className='slogen'>Innovative Drone Technology</h4>
               <div className='buttons'>
                 <Button 
+                  customStyles={{marginRight: "5px"}}
                   text={"Login"}
                   isLightStyle
                   onClick={navigateToLoginPage}

@@ -24,7 +24,7 @@ const Router = () => {
             <Route path="about" element={<AboutPage />}/>
             <Route path="login" element={<LoginPage />}/>
             <Route path="register" element={<RegisterPage />} />
-            <Route path="user" element={<SingleUserStatistics />} />
+            <Route path="user/:id" element={<SingleUserStatistics />} />
             <Route path="allStats" element={<UsersStatisticsPage />} />
             <Route path="contact" element={<ContactPage />} />
             <Route path="createProfile" element={<CreateProfilePage />} />
@@ -32,8 +32,8 @@ const Router = () => {
             <Route path="mainView" element={<MainViewPage />} />
             <Route path="paymentProgram" element={<PaymentProgramPage />} />
             <Route path="subscribe" element={<SubscriptionPage />} />
-            <Route path="*" element={<ErrorPage />} />
             <Route path="demo" element={<DemoPage/>} />
+            <Route path="*" element={<ErrorPage />} />
         </Routes>
     </BrowserRouter>
   )
