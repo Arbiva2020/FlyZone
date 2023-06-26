@@ -20,8 +20,8 @@
     border-radius: 20px;
     background-color: #2E2D2D;
     color: white;
-    width: 15%;
-    height: 25%;
+    width:fit-content;
+    height:fit-content;
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -30,4 +30,13 @@
     position: absolute;
     right: 0;
     margin-top: 100px;
+    padding: 20px;
+}
+
+.popup_headline {
+    margin: 10px 10px 20px 10px;
+}
+
+.popup_formControlLabel {
+    padding: 5px 10px 5px 10px;
 }

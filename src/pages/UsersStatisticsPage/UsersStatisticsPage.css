@@ -11,6 +11,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
+    /* margin: 40px auto 20px auto */
 }
 
 .users_content {
@@ -44,7 +45,7 @@
     border-width: 1px;
     border-color: #ffffff;
     border-radius: 20px; */
-    margin: 20px 0px 50px 0px;
+    margin: 20px 0px 150px 0px;
     height: 33vh;    
 }
 

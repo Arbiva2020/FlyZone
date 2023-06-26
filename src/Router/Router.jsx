@@ -13,7 +13,9 @@ import ErrorPage from '../pages/ErrorPage/ErrorPage'
 import MainViewPage from '../pages/MainViewPage/MainViewPage'
 import PaymentProgramPage from '../pages/PaymentProgramPage/PaymentProgramPage'
 import SubscriptionPage from '../pages/SubscriptionPage/SubscriptionPage'
+import UserReport from '../pages/UserReport/UserReport'
 import DemoPage from '../pages/DemoPage/DemoPage'
+import GenerateTest from '../pages/GenerateTest/GenerateTest'
 
 const Router = () => {
   return (
@@ -33,6 +35,8 @@ const Router = () => {
             <Route path="paymentProgram" element={<PaymentProgramPage />} />
             <Route path="subscribe" element={<SubscriptionPage />} />
             <Route path="demo" element={<DemoPage/>} />
+            <Route path="report" element={<UserReport/>} />
+            <Route path="generate" element={<GenerateTest/>} />
             <Route path="*" element={<ErrorPage />} />
         </Routes>
     </BrowserRouter>

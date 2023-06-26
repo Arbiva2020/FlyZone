@@ -7,8 +7,8 @@ export const sidebarData = {
      data: [
         {
             id: 1,
-            title: "search", 
-            path: "", 
+            title: "generate", 
+            path: "/generate", 
             icon: <SlMagnifier/>, 
             isActive: false,
         }, 
@@ -29,7 +29,7 @@ export const sidebarData = {
         {
             id: 4,
             title: "report", 
-            path: "/reports", 
+            path: "/report", 
             icon: <HiOutlineClipboardList/>, 
             isActive: false,
         }, 

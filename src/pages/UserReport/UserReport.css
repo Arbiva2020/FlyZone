@@ -1,0 +1,20 @@
+.userReport_main {
+    color: white;
+    font-family: lexend;
+    position: relative;
+}
+
+.userReport_headline {
+    text-align: center;
+    font-size: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.userReport_content {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+
+}

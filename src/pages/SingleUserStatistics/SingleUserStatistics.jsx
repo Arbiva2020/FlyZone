@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import AuthHeader from '../../components/AuthHeader/AuthHeader'
 import SideBar from '../../components/SideBar/SideBar'
-import Profile from '../../assets/Profile.png'
+// import Profile from '../../assets/Profile.png'
 import './SingleUserStatistics.css'
 import BarChart from '../../components/BarChart/BarChart'
 import PieChart from '../../components/PieChart/PieChart'
 import LineChart from '../../components/LineChart/LineChart'
+import UserSideData from '../../components/UserSideData/UserSideData'
 import { lineData, pieData, datafake } from '../../dataFake'
 import { Chart as ChartJS, Colors } from 'chart.js/auto'
 
@@ -107,14 +108,15 @@ function SingleUserStatistics() {
             <div className='singleUser_pie_right'><PieChart chartData={singleuserPieData} /></div>
           </div>
         </div>
-        <div className='singleUser_profile'>
+        <UserSideData />
+        {/* <div className='singleUser_profile'>
             <img src={Profile} className="singleUser_pic"/>
             <div className='singleUser_list'>
               <p>name from BD</p>
               <p>level from BD</p>
               <p>score from BD</p>
             </div>
-          </div>
+        </div> */}
       </div>
     </div>
   )
