@@ -91,6 +91,22 @@ const GenerateTest = () => {
                         </div>
                         <div className='scaling_right'>
                             <div className='right_headline'>Mission scope</div>
+                            <Box sx={{ width: 300 }}>
+                            <Slider
+                                aria-label="small steps"
+                                defaultValue={1}
+                                getAriaValueText={valuetext}
+                                step={1}
+                                min={1}
+                                max={10}
+                                valueLabelDisplay="auto"
+                                marks={true}
+                            />
+                        </Box>
+                        <Switch />
+                        <Switch />
+                        <Switch />
+
                         </div>
                         
                         {/* <switch></switch>
