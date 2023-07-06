@@ -17,7 +17,7 @@ const AuthHeader = () => {
       <div className='authHeader_menu'>
         <Link className='authHeader_link' >Logout</Link>
         <Link className='authHeader_link'>Help</Link>
-        <Link className='authHeader_link' to="/ " ><FaRegSun /></Link>
+        <Link className='authHeader_link' style={{marginTop:"4px"}} to="/ " ><FaRegSun /></Link>
         <Link className='authHeader_link' to="/createProfile">
             <img src={Profile} className="authHeader_userImage" alt="logo"/>
         </Link>

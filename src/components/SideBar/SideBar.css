@@ -1,7 +1,7 @@
 .sidebar_main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 .sidebar_menu {

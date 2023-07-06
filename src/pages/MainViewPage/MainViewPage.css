@@ -1,23 +1,71 @@
 .mainView_content {
     display: flex;
     flex-direction: row;
+    color: white;
+    font-family: lexend;
+    /* position: relative; */
+}
+
+.mainView_center {
+    width: 70%;
+}
+
+.mainView_right {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
 }
 
 .mainView_hedline {
     text-align: center;
-    color: white;
     margin-top: 5%;
     font-family: lexend;
     font-size: 25px;
 }
 
-.main_table {
-    background-color: #D6DBDF; 
+.mainView_table {
     border-radius: 20px;
-    height: 22rem;
-    width: 50rem;
-    margin-top: 5%;
+    margin-top: 2%;
     margin-bottom: 10%;
     margin-left: 5%;
     margin-right: 5%;
+    align-self: center;
+    height: fit-content;
 }
+
+.mainView_line {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 20px;
+    border-color: white;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    /* width: fit-content; */
+}
+
+.mainView_bar {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 20px;
+    border-color: white;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    /* width: fit-content; */
+}
+
+.MuiOutlinedInput-notchedOutline {
+    border-width: 1px !important;
+    border-color: "#ffffff" !important;
+    background-color:#2E2D2D;
+    color:black;
+  }
+  
+  .Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: white !important;
+  }
+
+  .MuiSvgIcon-root-MuiSelect-icon {
+    color: red !important
+  }

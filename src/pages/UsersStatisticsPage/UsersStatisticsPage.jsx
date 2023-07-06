@@ -64,10 +64,12 @@ const navigate = useNavigate()
       })
     );
   };
+
   const handleNavigateToUserPage = (id)=>{
     navigate(`/user/${id}`)
     console.log(`/user/${id}`)
   }
+  
   const popupClosehandler = (e) => {
     setPopupVisibility(e);
   };

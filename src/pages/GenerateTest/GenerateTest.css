@@ -21,7 +21,7 @@
 
 .generateTest_generate {
     display: flex;
-    width: 70%;
+    width: 90%;
     flex-direction: column;
     align-items: center;
 }
@@ -32,7 +32,15 @@
     border-radius: 20px;
     border-color: white;
     height: 60vh;
-    width: 70%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.geberateTest_up {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
 }
 
 .genertateTest_scaling{
@@ -52,4 +60,18 @@
     flex-direction: column;
     width: 50%;
     padding: 20px;
+}
+.genertateTest_slider {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.genertateTest_parameter {
+    margin: 20px;
+    font-weight: lighter;
+}
+
+.genertateTest_progress {
+    accent-color: #B943B4
 }

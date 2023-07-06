@@ -1,7 +1,8 @@
 import { AiOutlineDotChart, AiOutlineEye } from "react-icons/ai"
 import { HiOutlineClipboardList } from "react-icons/hi"
 import { MdQueryStats } from 'react-icons/md'
-import { SlMagnifier } from 'react-icons/sl'
+// import { SlMagnifier } from 'react-icons/sl'
+import {BsPencilSquare} from 'react-icons/bs'
 
 export const sidebarData = {
      data: [
@@ -9,7 +10,7 @@ export const sidebarData = {
             id: 1,
             title: "generate", 
             path: "/generate", 
-            icon: <SlMagnifier/>, 
+            icon: <BsPencilSquare/>, 
             isActive: false,
         }, 
         {
@@ -41,6 +42,5 @@ export const sidebarData = {
             isActive: false,
         }
     ]
-
 }
 

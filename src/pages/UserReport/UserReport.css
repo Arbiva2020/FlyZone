@@ -18,3 +18,58 @@
     margin-top: 20px;
 
 }
+
+.userReport_center {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.userReport_generateReport {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 20px;
+    border-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 75vh;
+}
+
+.userreport_top {
+    display: flex;
+    flex-direction: row;
+}
+
+.userReport_left {
+    display: flex;
+    flex-direction: column;
+}
+
+.userReport_right {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.userReport_name {
+    align-self: flex-start;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.userReport_form_extra {
+    margin-left: 20px;
+}
+
+.userReport_right_headline {
+    align-self: center;
+    margin-top: 20px;
+}
+
+.userReport_button {
+    align-self: flex-end;
+    margin-right: 20px;
+    margin-top: 10px;
+}
