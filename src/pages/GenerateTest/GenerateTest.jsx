@@ -14,9 +14,10 @@ import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import SliderGeneric from '../../components/Generic/SliderGeneric/SliderGeneric';
 import Select from '@mui/material/Select';
+import { useParams } from 'react-router-dom';
 
 const GenerateTest = () => {
-
+const {id} = useParams
 const [testMission, setTestMission] = React.useState("")
 const handleMissionChange = (event) => {
   setTestMission(event.target.value);
@@ -73,9 +74,9 @@ const handleMissionChange = (event) => {
         return `Level ${value}`;
       }
 
-      const handleAssignTestToUser = (id) =>{
-        // navigate(`/user/${id}`)
-        console.log(`test assigned to /user/${id}`)
+      const handleAssignTestToUser = () =>{
+        console.log(`test assigned to /generate/${id}`)
+        navigate(`/user/${id}`)
       }
 
       // const handleToggleButton = () => {
@@ -91,7 +92,7 @@ const handleMissionChange = (event) => {
         <div>
             <div className='generateTest_content'>
                 <div>
-                    <SideBar />
+                    <SideBar currentUserId={id}/>
                 </div>
                 <div className='generateTest_generate'>
                     <div className='generateTest_headline'>
@@ -101,7 +102,7 @@ const handleMissionChange = (event) => {
                       <div className='geberateTest_up'>
                         <div className='scaling_left'>
                           <div className='left_headline'>Environment</div>
-                                  <SliderGeneric 
+                                  {/* <SliderGeneric 
                                       aria-label="small steps"
                                       defaultValue={1}
                                       getAriaValueText={valuetext}
@@ -110,12 +111,12 @@ const handleMissionChange = (event) => {
                                       max={10}
                                       valueLabelDisplay="auto"
                                       marks={true}
-                                  />
+                                  /> */}
                           </div>
                         <div className='scaling_right'>
                             <div className='right_headline'>Mission scope</div>
-                             {/* <Box sx={{ width: 200 }}> */}
-                              {/* {testGeneratingConditions.map((data) => (
+                             <Box sx={{ width: 200 }}> 
+                              {testGeneratingConditions.map((data) => (
                                 <Slider 
                                   defaultValue={1}
                                   getAriaValueText={valuetext}
@@ -127,8 +128,8 @@ const handleMissionChange = (event) => {
                                   valueLabelDisplay="auto"
                                   aria-label="small steps"
                                 />
-                              ))} */}
-                            {/* </Box> */}
+                              ))} 
+                            </Box> 
                               <Box sx={{ width: 200 }}>
                                 <div className='genertateTest_slider'>
                                   <div className='genertateTest_parameter'>{'dataTitle'}</div>

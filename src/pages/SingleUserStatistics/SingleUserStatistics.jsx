@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate, useParams } from "react-router-dom";
 import AuthHeader from '../../components/AuthHeader/AuthHeader'
 import SideBar from '../../components/SideBar/SideBar'
 // import Profile from '../../assets/Profile.png'
@@ -7,6 +8,7 @@ import BarChart from '../../components/BarChart/BarChart'
 import PieChart from '../../components/PieChart/PieChart'
 import LineChart from '../../components/LineChart/LineChart'
 import UserSideData from '../../components/UserSideData/UserSideData'
+import Button from '../../components/Generic/Button/Button'
 import { lineData, pieData, datafake } from '../../dataFake'
 import { Chart as ChartJS, Colors } from 'chart.js/auto'
 
@@ -15,6 +17,7 @@ ChartJS.register(
   ); 
 
 function SingleUserStatistics() {
+  const {id } = useParams()
   const [singleuserData, setSingleuserData] = useState({
     labels: datafake.map((data) => data.id), 
     datasets: [
@@ -83,6 +86,11 @@ function SingleUserStatistics() {
       }
     ] 
 })
+const navigate = useNavigate()
+const handleNavigateToUserPage = (id)=>{
+  navigate(`/user/${id}/map`)
+  console.log(`/user/${id}/map`)
+}
 
 
   return (
@@ -90,33 +98,51 @@ function SingleUserStatistics() {
       <AuthHeader />
       <div className='singleUser_content'>
         <div className='singleUser_sideContent'>
-          <SideBar />
+          <SideBar currentUserId={id}/>
         </div>
         <div className='singleUser_charts'>
           <div className='singleUser_headline'>Users' Statistics</div>
           <div className='singleUser_upper_chart_section'>
+            <div className='singleUser_num_left'>
+              <div className='singleUser_num_numLeft'>
+                <h3>35%</h3>
+              </div>
+              <p className='singleUser_num_textLeft'>My name is Inigo Montoya</p>
+            </div>
+            <div className='singleUser_num_middle'>
+              <div className='singleUser_num_numMiddle'>
+                  <h3>35%</h3>
+                </div>
+                <p className='singleUser_num_textLeft'>You killed my father</p>
+            </div>
+            <div className='singleUser_num_right'>
+              <div className='singleUser_num_numRight'>
+                  <h3>35%</h3>
+                </div>
+                <p className='singleUser_num_textLeft'>Preper to die</p>
+            </div>
+          </div>
+          <div className='singleUser_middle_chart_section'>
             <div className='singleUser_bar_left'>
               <BarChart chartData={singleuserData} />
             </div>
             <div className='singleUser_bar_right'>
-              <BarChart chartData={singleuserData} />
+            <LineChart chartData={singleuserLineData} />
             </div>
           </div>
-          <div className='singleUser_lower_chart_section'><LineChart chartData={singleuserLineData} /></div>
           <div className='singleUser_pie_section'>
             <div className='singleUser_pie_left'><PieChart chartData={singleuserPieData} /></div>
             <div className='singleUser_pie_right'><PieChart chartData={singleuserPieData} /></div>
           </div>
         </div>
-        <UserSideData />
-        {/* <div className='singleUser_profile'>
-            <img src={Profile} className="singleUser_pic"/>
-            <div className='singleUser_list'>
-              <p>name from BD</p>
-              <p>level from BD</p>
-              <p>score from BD</p>
-            </div>
-        </div> */}
+        <div className='singleUser_sideData'>
+          <UserSideData />
+          <Button 
+            text="view map data"
+            customStyles={{fontSize: "12px", width:"80%", height: "150%", alignSelf:"center"}}
+            onClick={handleNavigateToUserPage}
+          />
+        </div>
       </div>
     </div>
   )

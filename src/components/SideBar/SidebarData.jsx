@@ -9,7 +9,7 @@ export const sidebarData = {
         {
             id: 1,
             title: "generate", 
-            path: "/generate", 
+            path: "/generate/[:id]", 
             icon: <BsPencilSquare/>, 
             isActive: false,
         }, 

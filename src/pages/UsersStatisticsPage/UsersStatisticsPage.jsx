@@ -20,7 +20,7 @@ import { useNavigate } from "react-router-dom";
 const UsersStatisticsPage = () => {
   const [filterInput, setFilterInput] = React.useState("");
   const [popupVisibility, setPopupVisibility] = React.useState(false);
-const navigate = useNavigate()
+  const navigate = useNavigate()
   // const data = React.useMemo(() => fakeData, [data]);
   const [data, setData] = useState(fakeData);
 

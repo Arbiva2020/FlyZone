@@ -17,7 +17,6 @@ const Header = () => {
         <Link className='header_link' to="/demo">Demo</Link>
         <Link className='header_link'>Help</Link>
         <Link className='header_link' to="/ "><FaRegSun /></Link>
-
       </div>
       
     </div>

@@ -1,5 +1,5 @@
-export const testGeneratingParams = {
-    data: [
+export const testGeneratingParams = 
+     [
         {
             title: "Fog", 
             defaultValue:"",
@@ -61,11 +61,10 @@ export const testGeneratingParams = {
             disabeld:"",
         },
     ]
-}
 
 
-export const testGeneratingConditions = {
-    data: [
+export const testGeneratingConditions = 
+     [
         {
             title: "Time to finish", 
             defaultValue:"",
@@ -107,4 +106,3 @@ export const testGeneratingConditions = {
             disabeld:"",
         },
     ]
-}
