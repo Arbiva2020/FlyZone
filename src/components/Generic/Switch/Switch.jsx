@@ -8,7 +8,7 @@ const Switch = ({isDisabled, customStyles={}}) => {
   return (
     <div className='switch_main'>
         <div className='switch_box'>
-        <Box sx={{ width: 300 }}>
+        <Box sx={{ width: 200 }}>
                             <Slider
                                 aria-label="small steps"
                                 valueLabelDisplay="auto"

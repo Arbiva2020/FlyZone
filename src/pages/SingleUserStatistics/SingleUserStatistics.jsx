@@ -17,7 +17,9 @@ ChartJS.register(
   ); 
 
 function SingleUserStatistics() {
-  const {id } = useParams()
+  const {id} = useParams()
+  console.log(id)
+  //console.log(currentUserId)
   const [singleuserData, setSingleuserData] = useState({
     labels: datafake.map((data) => data.id), 
     datasets: [
@@ -87,10 +89,19 @@ function SingleUserStatistics() {
     ] 
 })
 const navigate = useNavigate()
+
 const handleNavigateToUserPage = (id)=>{
   navigate(`/user/${id}/map`)
-  console.log(`/user/${id}/map`)
+  console.log(`/user/:${[id]}/map`)
 }
+
+// const handleNavigateToUserMap = (id) => {
+//   let dynamicPath
+//   // if(data.path.includes('[:id]')){
+//       dynamicPath = data.path.replace('[:id]', currentUserId)
+//       console.log(dynamicPath)
+//     // }
+// }
 
 
   return (
@@ -139,8 +150,9 @@ const handleNavigateToUserPage = (id)=>{
           <UserSideData />
           <Button 
             text="view map data"
-            customStyles={{fontSize: "12px", width:"80%", height: "150%", alignSelf:"center"}}
+            customStyles={{fontSize: "10px", height: "150%", alignSelf:"center", marginTop:"20px"}}
             onClick={handleNavigateToUserPage}
+            
           />
         </div>
       </div>

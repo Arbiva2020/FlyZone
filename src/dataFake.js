@@ -124,4 +124,31 @@ export const pieData =
             scoreNineth: 40, 
             scoreTenth: 80,
         }
+
+        export const companiesDb = [
+        {
+            id: 1, 
+            name: "ICL",
+            size: "Large", 
+            numberOfPilots: 5
+        },
+        {
+            id: 2, 
+            name: "Elbit",
+            size: "Large", 
+            numberOfPilots: 5
+        },
+        {
+            id: 3, 
+            name: "Candoo",
+            size: "Medium", 
+            numberOfPilots: 5
+        },
+        {
+            id: 4, 
+            name: "HighUp",
+            size: "Small", 
+            numberOfPilots: 5
+        }
+    ]
     

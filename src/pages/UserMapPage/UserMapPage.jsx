@@ -5,9 +5,13 @@ import Button from '../../components/Generic/Button/Button'
 import UserSideData from '../../components/UserSideData/UserSideData'
 import Map from '../../assets/map.png'
 import Select from '../../components/Generic/Select/Select'
+import { useParams } from 'react-router-dom';
 import './UserMapPage.css'
 
 const UserMapPage = () => {
+    const {id} = useParams
+    console.log(id)
+
   return (
     <div className='userMap_main'>
         <AuthHeader />

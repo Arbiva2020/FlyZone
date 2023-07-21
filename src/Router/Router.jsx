@@ -17,6 +17,7 @@ import UserReport from '../pages/UserReport/UserReport'
 import DemoPage from '../pages/DemoPage/DemoPage'
 import GenerateTest from '../pages/GenerateTest/GenerateTest'
 import UserMapPage from '../pages/UserMapPage/UserMapPage'
+import AddUser from '../pages/AddUser/AddUser'
 
 const Router = () => {
   return (
@@ -37,6 +38,7 @@ const Router = () => {
             <Route path="subscribe" element={<SubscriptionPage />} />
             <Route path="demo" element={<DemoPage/>} />
             <Route path="report" element={<UserReport/>} />
+            <Route path="add" element={<AddUser/>} />
             <Route path="generate/:id" element={<GenerateTest/>} />
             <Route path="map/:id" element={<UserMapPage/>} />
             <Route path="*" element={<ErrorPage />} />

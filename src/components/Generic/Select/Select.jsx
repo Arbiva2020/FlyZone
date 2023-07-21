@@ -7,11 +7,11 @@ import './Select.css'
 
 const SelectMap = ({value, onChange, title}) => {
 
-    const [valueData, setValueData] = React.useState('');
+    // const [valueData, setValueData] = React.useState('');
 
-    const handleChange = (event) => {
-      setValue(event.target.value);
-    };
+    // const handleChange = (event) => {
+    //   setValue(event.target.value);
+    // };
 
   return (
     <div className='select_main'>
@@ -22,14 +22,18 @@ const SelectMap = ({value, onChange, title}) => {
           labelId="demo-simple-select-filled-label"
           id="demo-simple-select-filled"
           value={value}
-          onChange={handleChange}
+          onChange={onChange}
+          // onChange={handleChange}
         >
-          <MenuItem value="">
+          {/* <MenuItem value="">
             <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
+          </MenuItem> */}
+          <MenuItem value={value}>{value}</MenuItem>
+          <MenuItem value={value}>{value}</MenuItem>
+          <MenuItem value={value}>{value}</MenuItem>
+          {/* <MenuItem value={10}>Ten</MenuItem>
           <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem> */}
         </Select>
       </FormControl>
     </div>
