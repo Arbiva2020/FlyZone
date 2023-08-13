@@ -7,26 +7,21 @@ import SideBar from '../../components/SideBar/SideBar'
 import Switch from '../../components/Generic/Switch/Switch'
 import Select from "../../components/Generic/Select/Select"
 import { companiesDb } from '../../dataFake'
+import MenuItem from '@mui/material/MenuItem'
+import Checkbox from "../../components/Generic/Checkbox/Checkbox"
 import './AddUser.css'
 
 const AddUser = () => {
 
-const [selectCompany, setSelectCompany] = React.useState("")
+const [selectedCompany, setSelectedCompany] = React.useState(companiesDb[0].name)
 
 const handleCompanyChange = (event) => {
-    setSelectCompany(event.target.value)
+    setSelectedCompany(event.target.value)
 }
 
 let value = companiesDb.map((element)=> element.name)
 console.log(value)
 
-
-companiesDb.forEach((element, index, array) => {
-    console.log(element.name)
-})
-
-let companiesList = companiesDb.forEach((element) => {element.name})
-console.log(companiesList)
 
 const handleAddUser = ()=> {
     console.log("pilot added")
@@ -64,10 +59,11 @@ const handleAddUser = ()=> {
                         <div className='addUser_text'><h4 className='addUser_key'>Group key:</h4></div>
                         <div className='adduser_input'>
                             <Select 
-                                value={selectCompany}
+                                value={selectedCompany}
                                 onChange={handleCompanyChange}
+                                label="Company Name"
                             >
-            
+                                {companiesDb.map((element)=> <MenuItem value={element.name}>{element.name}</MenuItem>)}
                             </Select>
                         </div>
                     </div>
@@ -84,6 +80,9 @@ const handleAddUser = ()=> {
                         <div className='addUser_switchDiv'>
                                 <div className='addUser_switchText'><h4 className='addUser_key'>Group key:</h4></div>
                                 <div className='add_switch'><Switch /></div>
+                        </div>
+                        <div>
+                            <div><Checkbox /></div>
                         </div>
                     </div>
                 </div>

@@ -9,6 +9,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import GroupSideData from '../../components/GroupSideData/GroupSideData'
+import UpgradeAdd from '../../components/UpgradeAdd/UpgradeAdd'
 import './MainViewPage.css'
 
 const MainViewPage = () => {
@@ -82,10 +83,10 @@ const MainViewPage = () => {
                 <MenuItem value="">
                   <em>None</em>
                 </MenuItem>
-                <MenuItem value={1} >Serveillance</MenuItem>
-                <MenuItem value={2}>Drop</MenuItem>
-                <MenuItem value={3}>Collect</MenuItem>
-                <MenuItem value={4}>Photograph</MenuItem>
+                <MenuItem value={1} >Group 1 from db</MenuItem>
+                <MenuItem value={2}>Group 2 from db</MenuItem>
+                <MenuItem value={3}>Group 3 from db</MenuItem>
+                <MenuItem value={4}>Group 4 from db</MenuItem>
 
               </Select>
             </FormControl>
@@ -95,6 +96,7 @@ const MainViewPage = () => {
          </div>
          <div className='mainView_right'>
             <GroupSideData />
+            <UpgradeAdd />
          </div>
       </div>
     </div>

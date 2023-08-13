@@ -11,6 +11,7 @@
     "currentLevel": "5",
     "MMR": "4",
     "badges": "2",
+    "numberOfFailurs": "1",
     "totalScore": "230"
   },
   {
@@ -25,6 +26,7 @@
     "currentLevel": "A",
     "MMR": "6",
     "badges": "5",
+    "numberOfFailurs": "3",
     "totalScore": "550"
   },
   {
@@ -39,6 +41,7 @@
     "currentLevel": "D",
     "MMR": "8",
     "badges": "10",
+    "numberOfFailurs": "2",
     "totalScore": "2671"
   }
 ]

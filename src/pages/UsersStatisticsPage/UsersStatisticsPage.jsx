@@ -3,6 +3,7 @@ import AuthHeader from "../../components/AuthHeader/AuthHeader";
 import SideBar from "../../components/SideBar/SideBar";
 import "./UsersStatisticsPage.css";
 import fakeData from "../../fakeData.json";
+import { Chart as ChartJS, Colors } from 'chart.js/auto'
 import { useFilters, useSortBy, useTable } from "react-table";
 import { FaSortAmountDownAlt } from "react-icons/fa";
 import { FaSortAmountDown } from "react-icons/fa";
@@ -10,12 +11,17 @@ import { FaSearch } from "react-icons/fa";
 import Input from "../../components/Generic/Input/Input";
 import SearchPopup from "../../components/SearchPopup/SearchPopup";
 import Popup from "../../components/Popup/Popup";
+import DoughnutChart from '../../components/DoughnutChart/DoughnutChart'
 import {
   searchDefaultState,
   searchDefaultValidState,
 } from "../../constants/FormDeaults";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
+ChartJS.register(
+  Colors
+  ); 
 
 const UsersStatisticsPage = () => {
   const [filterInput, setFilterInput] = React.useState("");
@@ -82,6 +88,35 @@ const UsersStatisticsPage = () => {
     prepareRow,
     setFilter,
   } = useTable({ columns, data }, useFilters, useSortBy);
+
+
+  const [singleuserDoughnutData, setSingleuserDoughnutData] = useState({
+    labels: Object.keys(fakeData), 
+    datasets: [
+      {
+        data: Object.values(fakeData), 
+        borderColor: [
+          'rgb(0, 0, 0)',
+          'rgb(0, 0, 0)',
+          'rgb(0, 0, 0)',
+          'rgb(0, 0, 0)',
+          'rgb(0, 0, 0)',
+          'rgb(0, 0, 0)',
+        ],
+        backgroundColor: [
+          'rgb(255, 99, 132)',
+          'rgb(54, 162, 235)',
+          'rgb(255, 206, 86)',
+          'rgb(75, 192, 192)',
+          'rgb(153, 102, 255)',
+          'rgb(255, 159, 64)',
+        ],
+        borderWidth:1
+      },
+    ]
+  })
+
+
   return (
     <div>
       <div className="users_main">
@@ -171,9 +206,24 @@ const UsersStatisticsPage = () => {
 
             <div className="users_headline">Stats Summary</div>
             <div className="users_charts">
-              <div className="users_leftChart"></div>
-              <div className="users_centerChart"></div>
-              <div className="users_rightChart"></div>
+              <div className="users_leftChart">
+                <div className="users_statHeadline">
+                  3 straight Failures:
+                </div>
+                <div><DoughnutChart chartData={singleuserDoughnutData}/></div>
+              </div>
+              <div className="users_centerChart">
+                <div className="users_statHeadline">
+                  Top badges:
+                </div>
+                <div><DoughnutChart chartData={singleuserDoughnutData}/></div>
+              </div>
+              <div className="users_rightChart">
+                <div className="users_statHeadline">
+                  assessment overdue:
+                </div>
+                <div><DoughnutChart chartData={singleuserDoughnutData}/></div>
+              </div>
             </div>
           </div>
           <div className="users_summary">

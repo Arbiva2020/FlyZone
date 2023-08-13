@@ -179,6 +179,12 @@ tbody td:hover:before {
   border-width: 1px;
   border-radius: 20px;
   border-color: white;
-  height: 90%;
+  height: 80%;
   width: 30%;
+}
+
+.users_statHeadline {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }

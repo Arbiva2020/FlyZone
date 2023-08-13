@@ -142,15 +142,18 @@ const handleNavigateToUserPage = (id)=>{
             </div>
           </div>
           <div className='singleUser_pie_section'>
-            <div className='singleUser_pie_left'><PieChart chartData={singleuserPieData} /></div>
-            <div className='singleUser_pie_right'><PieChart chartData={singleuserPieData} /></div>
+            <div className='singleUser_pie_pie'><h6>Test 1</h6><PieChart chartData={singleuserPieData} /></div>
+            <div className='singleUser_pie_pie'><h6>Test 2</h6><PieChart chartData={singleuserPieData} /></div>
+            <div className='singleUser_pie_pie'><h6>Test 3</h6><PieChart chartData={singleuserPieData} /></div>
+            <div className='singleUser_pie_pie'><h6>Test 4</h6><PieChart chartData={singleuserPieData} /></div>
+            {/* <div className='singleUser_pie_pie'><h6>Test 5</h6><PieChart chartData={singleuserPieData} /></div> */}
           </div>
         </div>
         <div className='singleUser_sideData'>
           <UserSideData />
           <Button 
             text="view map data"
-            customStyles={{fontSize: "10px", height: "150%", alignSelf:"center", marginTop:"20px"}}
+            customStyles={{fontSize: "10px", height: "150%", alignSelf:"center", marginTop:"20px", width:"maxContent", padding:"0px 10px 0px 10px"}}
             onClick={handleNavigateToUserPage}
             
           />

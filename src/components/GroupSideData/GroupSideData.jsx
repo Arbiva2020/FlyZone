@@ -19,13 +19,14 @@ const GroupSideData = () => {
               <p>no. of participants from BD</p>
               <p>Avg. score from BD</p>
             </div>
-            <div className='groupSideData_button'>
+            {/* <div className='groupSideData_button'>
               <Button 
+                customStyles={{marginTop: "10px", marginBottom:"10px"}}
                 text="watch group"
                 to="/allStats"
                 onClick = {handleGroupFocus}  
               />
-            </div>
+            </div> */}
         </div>
   )
 }

@@ -112,7 +112,7 @@ const MaterialUISwitchTheme = styled(Switch)(({ theme }) => ({
 
 
 return (
-    <div className='popup_main' style={{visibility: openPopup ? "hidden" : "visible", opacity: openPopup ? "0" : "1"}}>
+    <div className='popup_main' style={{visibility: openPopup ? "visible" : "hidden", opacity: openPopup ? "1" : "0"}}>
         <div className='popup_generic'>
             <h3 className='popup_headline'>Settings</h3>
             <ul className='popup'>

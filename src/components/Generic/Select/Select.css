@@ -1,3 +1,11 @@
+
 .select_main {
-    display: flex;
+    /* display: flex; */
+    /* margin-left: 100px; */
+    /* width: 150px; */
+    
 }
+
+.MuiInputLabel-root {
+    color: pink !important;
+  } 

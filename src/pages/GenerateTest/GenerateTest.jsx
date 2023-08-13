@@ -5,6 +5,7 @@ import AuthHeader from '../../components/AuthHeader/AuthHeader'
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 import Switch from '../../components/Generic/Switch/Switch'
+import Select from "../../components/Generic/Select/Select"
 import Button from '../../components/Generic/Button/Button'
 import { testGeneratingParams } from '../GenerateTest/GenerateTestData'
 import {testGeneratingConditions} from '../GenerateTest/GenerateTestData'
@@ -13,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import SliderGeneric from '../../components/Generic/SliderGeneric/SliderGeneric';
-import Select from '@mui/material/Select';
+// import Select from '@mui/material/Select';
 import { useParams } from 'react-router-dom';
 
 const GenerateTest = () => {
@@ -99,6 +100,11 @@ const handleMissionChange = (event) => {
                         Generate Test
                     </div>
                     <div className="genertateTest_scaling">
+                      <div className='generatetest_select'>
+                        <Select label="" title="Company" value={""} customStyles={{color:"secondary"}}/>
+                        <Select label="" title="Group" value={""}/>
+                        <Select label="" title="Pilot" value={""}/>
+                      </div>
                       <div className='geberateTest_up'>
                         <div className='scaling_left'>
                           <div className='left_headline'>Environment</div>
@@ -112,24 +118,40 @@ const handleMissionChange = (event) => {
                                       valueLabelDisplay="auto"
                                       marks={true}
                                   /> */}
+                                  <div className='generate_environment'>
+                                    <div className='generate_environment_text'>Senario:</div>
+                                    <div className='generate_environment_select'><Select /></div>
+                                  </div>
+                                  <div className='generate_environment'>
+                                    <div className='generate_environment_text'>Mission Type:</div>
+                                    <div className='generate_environment_select'><Select /></div>
+                                  </div>
+                                  <div className='generate_environment'>
+                                    <div className='generate_environment_text'>Senario:</div>
+                                    <div className='generate_environment_select'><Select /></div>
+                                  </div>
                           </div>
                         <div className='scaling_right'>
                             <div className='right_headline'>Mission scope</div>
-                             <Box sx={{ width: 200 }}> 
-                              {testGeneratingConditions.map((data) => (
-                                <Slider 
-                                  defaultValue={1}
-                                  getAriaValueText={valuetext}
-                                  step={data.step}
-                                  min={data.min}
-                                  max={data.max}
-                                  marks={data.marks}
-                                  disabled={false}
-                                  valueLabelDisplay="auto"
-                                  aria-label="small steps"
-                                />
-                              ))} 
-                            </Box> 
+                            <div>
+                              <div>{testGeneratingConditions.map((data) => 
+                                <div>
+                                  {data.title}
+                                  <Slider 
+                                    defaultValue={1}
+                                    getAriaValueText={valuetext}
+                                    step={data.step}
+                                    min={data.min}
+                                    max={data.max}
+                                    marks={data.marks}
+                                    disabled={false}
+                                    valueLabelDisplay="auto"
+                                    aria-label="small steps"
+                                  />
+                                </div>
+                                  )}
+                              </div>
+                            </div>
                               <Box sx={{ width: 200 }}>
                                 <div className='genertateTest_slider'>
                                   <div className='genertateTest_parameter'>{'dataTitle'}</div>
@@ -158,27 +180,13 @@ const handleMissionChange = (event) => {
                                 />
                                 </div>
                               </Box>
-                              <FormControl sx={{ m: 1, minWidth: 120 }}>
-                                <InputLabel id="demo-simple-select-helper-label">Mission definition</InputLabel>
-                                  <Select
-                                    labelId="demo-simple-select-helper-label"
-                                    id="demo-simple-select-helper"
-                                    value={testMission}
-                                    label="Age"
-                                    onChange={handleMissionChange}
-                                  >
-                                    <MenuItem value="">
-                                      <em>None</em>
-                                    </MenuItem>
-                                    <MenuItem value={10}>Ten</MenuItem>
-                                    <MenuItem value={20}>Twenty</MenuItem>
-                                    <MenuItem value={30}>Thirty</MenuItem>
-                                  </Select>
-                                </FormControl>
+          
                             </div>
                           </div>
                           <div className='generateTest_button'>
-                            <Button />
+                            <Button 
+                              text="Generate"
+                            />
                           </div>
                     </div>
                     <div className='geberateTest_down'> 
