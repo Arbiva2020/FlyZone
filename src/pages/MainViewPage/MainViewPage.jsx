@@ -71,27 +71,33 @@ const MainViewPage = () => {
          <div className='mainView_center'>
           <div className='mainView_hedline'>Main View</div>
           <div className='mainView_table'>
-          <FormControl sx={{ m: 1, minWidth: 120 }}>
-              <InputLabel id="select-test-label" style={{color: "#ffffff"}}>Select group</InputLabel>
-              <Select
-                labelId="select-test-label"
-                id="select-test"
-                value={selectValue}
-                label="Assessment type"
-                onChange={handleChange}
-              >
-                <MenuItem value="">
-                  <em>None</em>
-                </MenuItem>
-                <MenuItem value={1} >Group 1 from db</MenuItem>
-                <MenuItem value={2}>Group 2 from db</MenuItem>
-                <MenuItem value={3}>Group 3 from db</MenuItem>
-                <MenuItem value={4}>Group 4 from db</MenuItem>
+            <FormControl sx={{ m: 1, minWidth: 120 }}>
+                <InputLabel id="select-test-label" style={{color: "#ffffff"}}>Select group</InputLabel>
+                <Select
+                  labelId="select-test-label"
+                  id="select-test"
+                  value={selectValue}
+                  label="Assessment type"
+                  onChange={handleChange}
+                >
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  <MenuItem value={1} >Group 1 from db</MenuItem>
+                  <MenuItem value={2}>Group 2 from db</MenuItem>
+                  <MenuItem value={3}>Group 3 from db</MenuItem>
+                  <MenuItem value={4}>Group 4 from db</MenuItem>
 
-              </Select>
-            </FormControl>
-            <div className='mainView_line'><LineChart chartData={mainLineData} /></div>
-            <div className='mainView_bar'><BarChart chartData={mainViewData} /></div>
+                </Select>
+              </FormControl>
+            <div className='mainView_charts'>
+              <div className='mainView_line'><LineChart chartData={mainLineData} /></div>
+              <div className='mainView_bar'><BarChart chartData={mainViewData} /></div>
+            </div>
+            <div className='mainViewButton'>
+              <div className='mainView_hedline' style={{marginTop:"0px", }}>Additional data</div>
+              <div></div>
+            </div>
           </div>
          </div>
          <div className='mainView_right'>

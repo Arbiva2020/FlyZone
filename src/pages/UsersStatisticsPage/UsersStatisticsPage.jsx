@@ -18,17 +18,20 @@ import {
 } from "../../constants/FormDeaults";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { pieData, DoughnutDataBadges } from '../../dataFake'
+
 
 ChartJS.register(
   Colors
   ); 
 
-const UsersStatisticsPage = () => {
+const UsersStatisticsPage = (props) => {
   const [filterInput, setFilterInput] = React.useState("");
   const [popupVisibility, setPopupVisibility] = React.useState(false);
   const navigate = useNavigate()
   // const data = React.useMemo(() => fakeData, [data]);
   const [data, setData] = useState(fakeData);
+  
 
   const columns = React.useMemo(
     () => [
@@ -90,11 +93,11 @@ const UsersStatisticsPage = () => {
   } = useTable({ columns, data }, useFilters, useSortBy);
 
 
-  const [singleuserDoughnutData, setSingleuserDoughnutData] = useState({
-    labels: Object.keys(fakeData), 
+  const [userDoughnutData, setUserDoughnutData] = useState({
+    labels: Object.keys(DoughnutDataBadges), 
     datasets: [
       {
-        data: Object.values(fakeData), 
+        data: Object.values(DoughnutDataBadges), 
         borderColor: [
           'rgb(0, 0, 0)',
           'rgb(0, 0, 0)',
@@ -210,19 +213,24 @@ const UsersStatisticsPage = () => {
                 <div className="users_statHeadline">
                   3 straight Failures:
                 </div>
-                <div><DoughnutChart chartData={singleuserDoughnutData}/></div>
+                <div className="users_doughnut"><DoughnutChart chartData={userDoughnutData}/></div>
               </div>
               <div className="users_centerChart">
                 <div className="users_statHeadline">
                   Top badges:
                 </div>
-                <div><DoughnutChart chartData={singleuserDoughnutData}/></div>
+                <div className="users_doughnut"><DoughnutChart chartData={userDoughnutData}/></div>
               </div>
               <div className="users_rightChart">
                 <div className="users_statHeadline">
                   assessment overdue:
                 </div>
-                <div><DoughnutChart chartData={singleuserDoughnutData}/></div>
+                <div className="users_doughnut"><DoughnutChart
+                        // customStyles={{width:"50px"}} 
+                        chartData={userDoughnutData}
+                        options={{}}
+                      />
+                </div>
               </div>
             </div>
           </div>

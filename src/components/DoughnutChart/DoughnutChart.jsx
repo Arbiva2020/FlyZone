@@ -9,39 +9,30 @@ import { Doughnut } from 'react-chartjs-2'
 import { Colors } from 'chart.js'
 
 ChartJS.register(
-  Colors,  
-  ArcElement, 
-  Tooltip, 
-  Legend
-  ); 
+    Colors,  
+    ArcElement, 
+    Tooltip, 
+    Legend
+    ); 
 
 function DoughnutChart ({chartData}) {
-  // const doughnutLabel = {
-  //   id: 'doughnutLabel', 
-  //   beforeDatasetsDraw(chart, args, pluginOptions) {
-  //     const {ctx, data} = chart;
-  //     ctx.save();
-  //   }
-  // }
   const options = {
-    type: 'doughnut',
-  // data: data,
-  options: {
-    responsive: true,
     plugins: {
       legend: {
-        position: 'top',
-      },
-      title: {
-        display: true,
-        text: 'Chart.js Doughnut Chart'
+        position: 'left',
+        // rtl : true,
+        labels: {
+          usePointStyle: true,
+          pointStyle: 'circle',
+          padding: 20,
+        }
       }
-    }
-  },
+    },
 }
-  return (
-    <Doughnut data={chartData} options={options}></Doughnut>
-  )
+  return <Doughnut 
+            data={chartData} 
+            options={options}>
+          </Doughnut>;
 }
 
 export default DoughnutChart

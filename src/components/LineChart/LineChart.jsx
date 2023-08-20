@@ -22,7 +22,7 @@ function LineChart ({chartData}){
   const options = {
     plugins: {
       legend: {
-        position: 'top',
+        position: 'bottom',
         // rtl : true,
         labels: {
           usePointStyle: true,

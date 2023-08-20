@@ -35,17 +35,17 @@ export const datafake = [
 
 export const lineData = 
     {
-        headline: "Tests Scores",
-        scoreFirst: 80,
-        scoreSecond: 30,
-        scoreThird: 70, 
-        scoreForth: 10, 
-        scoreFifth: 40, 
-        scoreSixth: 80,
-        scoreSeventh: 50,  
-        scoreEight: 10, 
-        scoreNineth: 40, 
-        scoreTenth: 80,
+        // headline: "Tests Scores",
+        "#1": 80,
+        "#2": 30,
+        "#3": 70, 
+        "#4": 10, 
+        "#5": 40, 
+        "#6": 80,
+        "#7": 50,  
+        "#8": 10, 
+        "#9": 40, 
+        "#10": 80,
     }
 
 
@@ -57,6 +57,24 @@ export const pieData =
         wind: 5, 
         balancing: 15, 
         timeOut: 10,
+    }
+
+    export const DoughnutDataBadges = 
+    {
+        totalBadges: 10, 
+        userBadges: 8
+    }
+
+    export const DoughnutDataFail = 
+    {
+        totalTests: 14, 
+        userFails: 2
+    }
+
+    export const DoughnutDataPerfect = 
+    {
+        totalTests: 14,  
+        userPerfectScore: 5
     }
 
     export const users = 

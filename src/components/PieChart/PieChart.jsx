@@ -7,6 +7,7 @@ import {
 } from 'chart.js/auto'
 import { Pie } from 'react-chartjs-2'
 import { Colors } from 'chart.js'
+import './PieChart.css'
 
 ChartJS.register(
     Colors,  
@@ -29,7 +30,7 @@ function PieChart ({chartData}) {
       }
     },
 }
-  return <Pie data={chartData} options={options}></Pie>;
+  return <Pie className="piePie" data={chartData} options={options}></Pie>;
 }
 
 export default PieChart

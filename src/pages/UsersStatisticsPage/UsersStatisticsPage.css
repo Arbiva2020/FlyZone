@@ -45,7 +45,7 @@
     border-width: 1px;
     border-color: #ffffff;
     border-radius: 20px; */
-    margin: 20px 0px 150px 0px;
+    margin: 20px 0px 100px 0px;
     height: 33vh;    
 }
 
@@ -121,9 +121,7 @@ tbody td:hover:before {
     height: 100%;
 }
 
-.usersStats_th {
-    
-}
+
 
 .users_icon {
   position: absolute;
@@ -153,6 +151,14 @@ tbody td:hover:before {
   align-items: center;
 }
 
+.users_doughnut {
+  display: flex;
+  width:150%;
+  height: 150%;
+  align-items: center;
+  justify-content: center;
+}
+
 .users_leftChart {
   background-color: black;
   border-style: solid;
@@ -160,7 +166,10 @@ tbody td:hover:before {
   border-radius: 20px;
   border-color: white;
   height: 80%;
-  width: 30%
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .users_rightChart {
@@ -170,7 +179,10 @@ tbody td:hover:before {
   border-radius: 20px;
   border-color: white;
   height: 80%;
-  width: 30%
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .users_centerChart {
@@ -181,6 +193,9 @@ tbody td:hover:before {
   border-color: white;
   height: 80%;
   width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .users_statHeadline {

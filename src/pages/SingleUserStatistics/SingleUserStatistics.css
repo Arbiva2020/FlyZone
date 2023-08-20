@@ -69,7 +69,7 @@
 .singleUser_upper_chart_section{
     display: flex;
     flex-direction: row;
-    height: 33vh;
+    height: fit-content;
 } 
 
 .singleUser_middle_chart_section{
@@ -120,10 +120,11 @@
 .singleUser_pie_section {
     display: flex;
     flex-direction: row;
-    height: 33vh;
+    /* height: 33vh; */
     justify-content:space-between; 
-    width: 100%;
-    margin: 20px 0px 20px 0px;
+    height: fit-content;
+    /* width: 100%;
+    margin: 20px 0px 20px 0px; */
 
 }
 
@@ -137,6 +138,7 @@
     position: relative;
     padding: 10px;
     width: 20%;
+    height: fit-content;
 }
 
 .singleUser_num_left, .singleUser_num_right, .singleUser_num_middle {
@@ -150,35 +152,33 @@
     justify-content: center;
     align-items: center;
     align-content: center;
+    height: fit-content;
 }
 
-.singleUser_num_middle {
-    margin: 0px 20px 0px 20px;
-   
+.singleUser_info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 75%;
+    margin-left: 20px;
 }
 
-.singleUser_num_numLeft, .singleUser_num_numMiddle, .singleUser_num_numRight {
-    border-style: solid;
-    border-width: 5px;
-    border-radius: 100px;
-    width: 100px;
-    height: 100px;
+.singleUser_SubInfo {
+    width: 30%;
+    background-color: #2E2D2D;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.singleUser_num_numLeft {
+    width: 200px;
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-}
-
-.singleUser_num_numLeft {
-    border-color: #cf2a9e;
-}
-
-.singleUser_num_numMiddle {
-    border-color: #d45fe4;
-}
-
-.singleUser_num_numRight {
-    border-color: darkturquoise;
 }
 
 .singleUser_num_textLeft, .singleUser_num_textMiddle, .singleUser_num_textRight {

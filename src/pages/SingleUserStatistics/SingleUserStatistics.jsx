@@ -10,15 +10,17 @@ import LineChart from '../../components/LineChart/LineChart'
 import UserSideData from '../../components/UserSideData/UserSideData'
 import Button from '../../components/Generic/Button/Button'
 import { lineData, pieData, datafake } from '../../dataFake'
+import DoughnutChart from '../../components/DoughnutChart/DoughnutChart';
 import { Chart as ChartJS, Colors } from 'chart.js/auto'
 
 ChartJS.register(
   Colors
   ); 
 
-function SingleUserStatistics() {
-  const {id} = useParams()
+function SingleUserStatistics(props) {
+  const {id, firstName} = useParams()
   console.log(id)
+  console.log(firstName)
   //console.log(currentUserId)
   const [singleuserData, setSingleuserData] = useState({
     labels: datafake.map((data) => data.id), 
@@ -36,13 +38,13 @@ function SingleUserStatistics() {
         borderColor: "white"
       },
       {
-        label: "Avg. Score", 
+        label: "Battary", 
         data: datafake.map((data) => data.battary),
         backgroundColor: "white", 
         borderColor: "white"
       },
       {
-        label: "Avg. Score", 
+        label: "Points", 
         data: datafake.map((data) => data.points),
         backgroundColor: "pink", 
         borderColor: "white"
@@ -81,18 +83,47 @@ function SingleUserStatistics() {
     labels: Object.keys(lineData),
     datasets: [
       {
-        label: lineData.headline,
-        data: Object.values(lineData), 
+        label: "Test scores",
+        data: Object.values(lineData),
         borderColor: "pink",
         backgroundColor: "pink"
       }
     ] 
 })
+
+
+const [singleuserDoughnutData, setSingleuserDoughnutData] = useState({
+  labels: Object.keys(pieData), 
+  datasets: [
+    {
+      data: Object.values(pieData), 
+      borderColor: [
+        'rgb(0, 0, 0)',
+        'rgb(0, 0, 0)',
+        'rgb(0, 0, 0)',
+        'rgb(0, 0, 0)',
+        'rgb(0, 0, 0)',
+        'rgb(0, 0, 0)',
+      ],
+      backgroundColor: [
+        'rgb(255, 99, 132)',
+        'rgb(54, 162, 235)',
+        'rgb(255, 206, 86)',
+        'rgb(75, 192, 192)',
+        'rgb(153, 102, 255)',
+        'rgb(255, 159, 64)',
+      ],
+      borderWidth:1
+    },
+  ]
+})
+
+
 const navigate = useNavigate()
 
 const handleNavigateToUserPage = (id)=>{
-  navigate(`/user/${id}/map`)
-  console.log(`/user/:${[id]}/map`)
+  navigate(`/map/${props.id}`)
+  console.log(`/:${[props.id]}/map`)
 }
 
 // const handleNavigateToUserMap = (id) => {
@@ -116,21 +147,26 @@ const handleNavigateToUserPage = (id)=>{
           <div className='singleUser_upper_chart_section'>
             <div className='singleUser_num_left'>
               <div className='singleUser_num_numLeft'>
-                <h3>35%</h3>
+                <DoughnutChart chartData={singleuserDoughnutData}/>
               </div>
-              <p className='singleUser_num_textLeft'>My name is Inigo Montoya</p>
+              {/* <p className='singleUser_num_textLeft'>My name is Inigo Montoya</p> */}
             </div>
-            <div className='singleUser_num_middle'>
-              <div className='singleUser_num_numMiddle'>
-                  <h3>35%</h3>
-                </div>
-                <p className='singleUser_num_textLeft'>You killed my father</p>
-            </div>
-            <div className='singleUser_num_right'>
-              <div className='singleUser_num_numRight'>
-                  <h3>35%</h3>
-                </div>
-                <p className='singleUser_num_textLeft'>Preper to die</p>
+            <div className='singleUser_info'>
+              <div className='singleUser_SubInfo'>
+                <h4>hello</h4>
+                <h2 style={{color:"lightblue"}}>35%</h2>
+                <p>today</p>
+              </div>
+              <div className='singleUser_SubInfo'>
+                <h4>hello</h4>
+                <h2 style={{color:"lightcoral"}}>90%</h2>
+                <p>today</p>
+              </div>
+              <div className='singleUser_SubInfo'>
+                <h4>hello</h4>
+                <h2 style={{color:"pink"}}>72%</h2>
+                <p>today</p>
+              </div>
             </div>
           </div>
           <div className='singleUser_middle_chart_section'>
