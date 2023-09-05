@@ -193,3 +193,11 @@
     flex-direction: column;
     align-items: center;
 }
+
+.singleUserTrend {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+    align-items: center;
+}

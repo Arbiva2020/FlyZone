@@ -92,7 +92,6 @@ const UsersStatisticsPage = (props) => {
     setFilter,
   } = useTable({ columns, data }, useFilters, useSortBy);
 
-
   const [userDoughnutData, setUserDoughnutData] = useState({
     labels: Object.keys(DoughnutDataBadges), 
     datasets: [
@@ -119,7 +118,7 @@ const UsersStatisticsPage = (props) => {
     ]
   })
 
-
+console.log(rows)
   return (
     <div>
       <div className="users_main">
@@ -235,7 +234,7 @@ const UsersStatisticsPage = (props) => {
             </div>
           </div>
           <div className="users_summary">
-            <p className="users_summary_total">Total users: {}</p>
+            <p className="users_summary_total">Total users: {rows.length}</p>
             <p className="users_summary_total">Score avg. : {}</p>
             <p className="users_summary_total">Level avg. : {}</p>
             <p className="users_summary_total">Total drone losses: {}</p>

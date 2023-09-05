@@ -7,6 +7,8 @@ import Slider from '@mui/material/Slider';
 import Switch from '../../components/Generic/Switch/Switch'
 import Select from "../../components/Generic/Select/Select"
 import Button from '../../components/Generic/Button/Button'
+import '../../fakeData.json'
+import { companiesDb } from '../../dataFake'
 import { testGeneratingParams } from '../GenerateTest/GenerateTestData'
 import {testGeneratingConditions} from '../GenerateTest/GenerateTestData'
 import InputLabel from '@mui/material/InputLabel';
@@ -14,12 +16,17 @@ import MenuItem from '@mui/material/MenuItem';
 import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import SliderGeneric from '../../components/Generic/SliderGeneric/SliderGeneric';
-// import Select from '@mui/material/Select';
 import { useParams } from 'react-router-dom';
 
 const GenerateTest = () => {
 const {id} = useParams
+const [testOption, setTestOptiopn] = React.useState("")
 const [testMission, setTestMission] = React.useState("")
+
+const handleOptionChange = (event) => {
+  setTestOptiopn(event.target.value);
+}
+
 const handleMissionChange = (event) => {
   setTestMission(event.target.value);
 }
@@ -86,7 +93,7 @@ const handleMissionChange = (event) => {
       //   }
       // }
 
-
+console.log(companiesDb.map((value)=>Object.values(value.name).join('')))
   return (
     <div className='generateTest_main'>
         <AuthHeader />
@@ -101,9 +108,26 @@ const handleMissionChange = (event) => {
                     </div>
                     <div className="genertateTest_scaling">
                       <div className='generatetest_select'>
-                        <Select label="" title="Company" value={""} customStyles={{color:"secondary"}}/>
-                        <Select label="" title="Group" value={""}/>
-                        <Select label="" title="Pilot" value={""}/>
+                        <Select  
+                          label="Company" 
+                          title="Company"
+                          value={companiesDb.map((value)=><MenuItem value={testOption}>{value=Object.values(value.name).join('')}</MenuItem>)} 
+                          customStyles={{color:"secondary"}}
+                          >
+                            {/* {companiesDb.map((value)=><MenuItem>{value=Object.values(value.name).join('')}</MenuItem>)} */}
+                          </Select>
+                        <Select 
+                          label="Group" 
+                          title="Group"
+                          value={companiesDb.map((value)=><MenuItem value={testOption}>{value=Object.values(value.name).join('')}</MenuItem>)} 
+                          customStyles={{color:"secondary"}}
+                        />
+                        <Select 
+                          label="Pilot" 
+                          title="Pilot"
+                          value={companiesDb.map((value)=><MenuItem value={testOption}>{value=Object.values(value.name).join('')}</MenuItem>)} 
+                          customStyles={{color:"secondary"}}
+                        />
                       </div>
                       <div className='geberateTest_up'>
                         <div className='scaling_left'>

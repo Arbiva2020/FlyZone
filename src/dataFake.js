@@ -148,25 +148,53 @@ export const pieData =
             id: 1, 
             name: "ICL",
             size: "Large", 
-            numberOfPilots: 5
+            numberOfPilots: 5, 
+            groups: [1,2,3,4,5,6]
         },
         {
             id: 2, 
             name: "Elbit",
             size: "Large", 
-            numberOfPilots: 5
+            numberOfPilots: 3, 
+            groups: [1,2,3]
         },
         {
             id: 3, 
             name: "Candoo",
             size: "Medium", 
-            numberOfPilots: 5
+            numberOfPilots: 2, 
+            numberOfPilots: 3, 
+            groups: [1,2,3,4,5]
         },
         {
             id: 4, 
-            name: "HighUp",
+            name: "DownWind",
             size: "Small", 
-            numberOfPilots: 5
+            numberOfPilots: 4, 
+            numberOfPilots: 3, 
+            groups: [1,2]
         }
     ]
     
+    export const scenario = [
+        {
+            id: 1, 
+            map: "../../", 
+            characteristics: ["desert", "open space", "arrid", "empty", "middle east"]
+        },
+        {
+            id: 2, 
+            map: "image", 
+            characteristics: ["trees", "open space", "obsticle", "forest", "middle east", "high density"]
+        },
+        {
+            id: 3, 
+            map: "image", 
+            characteristics: ["city", "open space", "building", "crouded", "manuvre"]
+        },
+        {
+            id: 4, 
+            map: "image", 
+            characteristics: ["closed space ", "open space", "empty", "high density"]
+        }
+    ]

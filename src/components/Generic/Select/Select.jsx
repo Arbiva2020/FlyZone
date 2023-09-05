@@ -6,12 +6,12 @@ import Select from '@mui/material/Select';
 import { OutlinedInput } from '@mui/material';
 import './Select.css'
 
-const SelectMap = ({value, onChange, title, label="default"}) => {
+const SelectMap = ({value, title, label="default"}) => {
 
     const [valueData, setValueData] = React.useState();
 
     const handleChange = (event) => {
-      setValue(event.target.value);
+      setValueData(event.target.value);
     };
 
   return (
@@ -21,8 +21,8 @@ const SelectMap = ({value, onChange, title, label="default"}) => {
         <Select
           labelId="demo-simple-select-filled-label"
           id="demo-simple-select-filled"
-          value={value}
-          onChange={onChange}
+          value={valueData}
+          onChange={handleChange}
           label={label}
           color="secondary"
           MenuProps={{
@@ -34,15 +34,8 @@ const SelectMap = ({value, onChange, title, label="default"}) => {
             }
            
           }}
-          // onChange={handleChange}
         >
-          {/* <MenuItem value="">
-            <em>None</em>
-          </MenuItem> */}
-          <MenuItem value={value}>{value}</MenuItem>
-          {/* <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem> */}
+          <MenuItem value={"1"}>{value}</MenuItem>
         </Select>
       </FormControl>
     </div>

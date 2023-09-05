@@ -19,7 +19,7 @@ function DoughnutChart ({chartData}) {
   const options = {
     plugins: {
       legend: {
-        position: 'left',
+        position: 'bottom',
         // rtl : true,
         labels: {
           usePointStyle: true,

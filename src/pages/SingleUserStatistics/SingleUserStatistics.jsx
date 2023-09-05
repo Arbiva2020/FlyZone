@@ -12,6 +12,8 @@ import Button from '../../components/Generic/Button/Button'
 import { lineData, pieData, datafake } from '../../dataFake'
 import DoughnutChart from '../../components/DoughnutChart/DoughnutChart';
 import { Chart as ChartJS, Colors } from 'chart.js/auto'
+import { IoMdArrowDropdownCircle } from "react-icons/io";
+import { IoMdArrowDropupCircle } from "react-icons/io"
 
 ChartJS.register(
   Colors
@@ -153,19 +155,28 @@ const handleNavigateToUserPage = (id)=>{
             </div>
             <div className='singleUser_info'>
               <div className='singleUser_SubInfo'>
-                <h4>hello</h4>
-                <h2 style={{color:"lightblue"}}>35%</h2>
-                <p>today</p>
+                <h4>Balancing</h4>
+                <h2 style={{color:"lightblue", fontSize:"300%"}}>35%</h2>
+                <div className='singleUserTrend'>
+                  <p style={{fontSize:"80%"}}>Increase</p>
+                  {(<p>Decrease</p> ? <IoMdArrowDropdownCircle style={{color:"red"}}/> : <IoMdArrowDropupCircle style={{color:"green"}}/>)}
+                </div>
               </div>
               <div className='singleUser_SubInfo'>
-                <h4>hello</h4>
-                <h2 style={{color:"lightcoral"}}>90%</h2>
-                <p>today</p>
+                <h4>Success rate</h4>
+                <h2 style={{color:"lightcoral", fontSize:"300%"}}>90%</h2>
+                <div className='singleUserTrend'>
+                  <p style={{fontSize:"80%"}}>decrease</p>
+                  {(<p>Decrease</p> ? <IoMdArrowDropdownCircle style={{color:"red"}}/> : <IoMdArrowDropupCircle style={{color:"green"}}/>)}
+                </div>
               </div>
               <div className='singleUser_SubInfo'>
-                <h4>hello</h4>
-                <h2 style={{color:"pink"}}>72%</h2>
-                <p>today</p>
+                <h4>Batart usage</h4>
+                <h2 style={{color:"pink", fontSize:"300%"}}>72%</h2>
+                <div className='singleUserTrend'>
+                  <p style={{fontSize:"80%"}}>decrease</p>
+                  {(<p>Decrease</p> ? <IoMdArrowDropdownCircle style={{color:"red"}}/> : <IoMdArrowDropupCircle style={{color:"green"}}/>)}
+                </div>
               </div>
             </div>
           </div>
