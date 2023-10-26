@@ -4,7 +4,7 @@ import Button from '../../components/Generic/Button/Button'
 import Input from '../../components/Generic/Input/Input'
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai"
 import { registerDefaultState, registerDefaultValidState } from '../../constants/FormDeaults' 
-import { validateEmail, validateMinMax, validatePassword } from '../../validators/validators'
+import { validateEmail, validateMinMax, validatePassword, confirmPassword } from '../../validators/validators'
 import './RegisterPage.css'
 
 const RegisterPage = () => {
@@ -61,11 +61,18 @@ const RegisterPage = () => {
       }
         if(key === "password"){
           isValid = validatePassword(registerObject[key])
-  
+          console.log(isValid)
           if(!isValid){
             setErrors(prev => [`${key} does not meet the requirements of one uppercase, one lowercase`,...prev])
           }
       }
+      if(key === "confirmedPassword"){
+        isValid = confirmPassword(registerObject[key])
+        console.log(isValid)
+        if(!isValid){
+          setErrors(prev => [`${key} does not meet the requirements of one uppercase, one lowercase`,...prev])
+        }
+    }
       if(key ==="email"){
         isValid = validateEmail(registerObject[key])
         console.log(isValid)
@@ -126,8 +133,8 @@ console.log(errors)
                 placeholder="Password"
                 type={showPassword ? "text" : "password"}
                 onBlur={(e) => handleChange(e.target.name, e.target.value)}
-                checkErrorsFunc={validateMinMax}
-                errorFuncParams={['Password', 6, 20]}
+                checkErrorsFunc={validatePassword}
+                setIsFormValid={setIsFormValid}
               />
                {showEye ? <AiFillEye className="eyeIcon" onClick={toggleShowPassword}/> : <AiFillEyeInvisible className="eyeCanceldIcon" onClick={toggleShowPassword}/>}
             </div>
@@ -139,8 +146,9 @@ console.log(errors)
                 placeholder="Confirm Password"
                 type={showConfirmed ? "text" : "password"}
                 onBlur={(e) => handleChange(e.target.name, e.target.value)}
-                checkErrorsFunc={validateMinMax}
-                errorFuncParams={['Password', 6, 20]}
+                checkErrorsFunc={confirmPassword}
+                errorFuncParams={[registerObject.password]}
+                setIsFormValid={setIsFormValid}
               />
               {showConfirmedEye ? <AiFillEye className="eyeIcon" onClick={toggleShowConfirmedPassword}/> : <AiFillEyeInvisible className="eyeCanceldIcon" onClick={toggleShowConfirmedPassword}/>}
             </div>

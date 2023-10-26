@@ -1,10 +1,16 @@
 import React from 'react'
 import Input from '../../components/Generic/Input/Input'
+import { redirect, Navigate, useNavigate } from 'react-router-dom'
 import Button from '../../components/Generic/Button/Button'
 import Header from '../../components/Header/Header'
 import './SubscriptionPage.css'
 
-const SubscriptionPage = () => {
+const SubscriptionPage = ({title}) => {
+  const navigate = useNavigate();
+const onNavigation = async() => {
+   navigate("/paymentProgram")
+}
+
   return (
     <div className='subscription_main'>
       <Header />
@@ -28,12 +34,14 @@ const SubscriptionPage = () => {
             // customStyles={{width:"200%"}}
             text={"Subscribe"}
             isLightStyle
-            onClick={''}
+            onClick={onNavigation}
+            title= "basicButton"
           />
         </div>
         <div className='premium_plan'>
           <div className='premium_frame'>
           <h2 className='headline'>PREMIUM</h2>
+          <div className='details_container'>
             <h5 className='details_item'>Access to all scenarios</h5>
             <h5 className='details_item'>Access to all levels</h5>
             <h5 className='details_item'>Automated repord</h5>
@@ -42,11 +50,13 @@ const SubscriptionPage = () => {
             <h6 className='details_item'>Per user</h6>
             <h6 className='details_item'>Per class</h6>
             <h2 className='price'>ONLY 100$</h2>
+            </div>
           </div>
           <Button 
             text={"Subscribe"}
             isLightStyle
             onClick={''}
+            title= "premiumButton"
           />
         </div>
       </div>

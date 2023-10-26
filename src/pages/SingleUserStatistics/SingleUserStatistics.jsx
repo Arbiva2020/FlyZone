@@ -149,7 +149,7 @@ const handleNavigateToUserPage = (id)=>{
           <div className='singleUser_upper_chart_section'>
             <div className='singleUser_num_left'>
               <div className='singleUser_num_numLeft'>
-                <DoughnutChart chartData={singleuserDoughnutData}/>
+                <DoughnutChart chartData={singleuserDoughnutData} />
               </div>
               {/* <p className='singleUser_num_textLeft'>My name is Inigo Montoya</p> */}
             </div>
@@ -185,7 +185,7 @@ const handleNavigateToUserPage = (id)=>{
               <BarChart chartData={singleuserData} />
             </div>
             <div className='singleUser_bar_right'>
-            <LineChart chartData={singleuserLineData} />
+              <LineChart chartData={singleuserLineData} />
             </div>
           </div>
           <div className='singleUser_pie_section'>

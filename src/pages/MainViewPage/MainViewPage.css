@@ -28,6 +28,7 @@
     flex-direction: row;
     align-items: baseline;
     justify-content: space-between;
+    margin-bottom: 40px;
 }
 
 .mainView_table {
@@ -50,6 +51,7 @@
     height: 30vh;
     width: 50%;
     margin-right: 5px;
+    align-items: center;
 }
 
 .mainView_bar {
@@ -62,37 +64,43 @@
     height: 30vh;
     width: 50%;
     margin-left: 5px;
+    align-items: center;
 }
-
-.MuiOutlinedInput-notchedOutline {
-    border-width: 1px !important;
-    border-color: "#ffffff" !important;
-    background-color:#2E2D2D;
-    color:black;
-  }
-  
-  .Mui-focused .MuiOutlinedInput-notchedOutline {
-    border-color: white !important;
-  }
 
   .MuiSvgIcon-root-MuiSelect-icon {
     color: red !important
   }
 
-  .mainViewButton {
+  .mainViewButtom {
     display: flex;
     flex-direction: column;
-    align-items: start;
     border-radius: 20px;
     border-style: solid;
     border-color: white;
     border-width: 1px;
-    height: 150px;
     color: white;
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+    background-color: #2E2D2D;
+    justify-content:space-between ;
+    width: -webkit-fill-available;
+
+    /*
+    align-items: start;
+
     width: 100%;
     margin-right: 10px;
     height: fit-content;
     padding: 10px;
     background-color: #2E2D2D;
-    margin-top: 50px;
+    margin-top: 50px; */
   }
+
+  .mainView_charts_bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px;
+}

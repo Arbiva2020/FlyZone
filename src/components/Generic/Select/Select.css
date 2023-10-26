@@ -1,11 +1,17 @@
 
-.select_main {
-    /* display: flex; */
-    /* margin-left: 100px; */
-    /* width: 150px; */
-    
-}
+.MuiInputBase-root {
+    width: 150px;
+    background-color:dimgray;
+  } 
 
-.MuiInputLabel-root {
+  .MuiInputLabel-root {
     color: pink !important;
   } 
+
+  .MuiFormControl-root {
+    
+  }
+
+  .select_main {
+    margin: 5px;
+  }

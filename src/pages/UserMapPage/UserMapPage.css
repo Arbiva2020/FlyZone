@@ -65,3 +65,11 @@
     flex-direction: row;
     align-items: center;
 }
+
+.userMap_style {
+    line-height: 300%;
+}
+
+.userMap_img {
+    width: -webkit-fill-available;
+}

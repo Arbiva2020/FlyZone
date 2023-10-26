@@ -9,7 +9,7 @@
     height: 150px;
     color: white;
     width: -webkit-fill-available;
-    /* width: fit-content; */
+    width: fit-content;
     margin-right: 10px;
     height: fit-content;
     padding: 10px;

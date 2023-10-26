@@ -21,13 +21,13 @@ function BarChart ({chartData}) {
   const options = {
     plugins: {
       legend: {
-        position: 'left',
+        position: 'bottom',
         // rtl : true,
         labels: {
           usePointStyle: true,
           pointStyle: 'circle',
-          padding: 20,
-          fontSize: 10,
+          padding: 10,
+          
         }
       }
     },
@@ -41,7 +41,6 @@ const optionsB = {
         usePointStyle: true,
         pointStyle: 'circle',
         padding: 20,
-        fontSize: 10,
       }
     }
   },

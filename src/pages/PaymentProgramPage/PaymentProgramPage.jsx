@@ -24,8 +24,8 @@ const PaymentProgramPage = () => {
               <div className='detail_icon_text'>
                 <HiCheck />
                 <p className='detail_text'>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br/> sed do eiusmod 
-                  tempor incididunt ut labore<br/> et dolore magna aliqua. 
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+                  tempor incididunt ut labore et dolore magna aliqua. 
                   Ut enim ad minim veniam, <br/>quis nostrud exercitation ullamco 
                   laboris nisi ut aliquip.
                 </p>
@@ -33,22 +33,36 @@ const PaymentProgramPage = () => {
               <div className='detail_icon_text'>
                 <HiCheck />
                 <p className='detail_text'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br/> sed do eiusmod 
-                  tempor incididunt ut labore<br/> et dolore magna aliqua. 
-                  Ut enim ad minim veniam, <br/>quis nostrud exercitation ullamco 
-                  laboris nisi ut aliquip.
-                </p>
-              </div>
-              <div className='detail_icon_text'>
-                <HiCheck />
-                <p className='detail_text'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br/> sed do eiusmod 
-                  tempor incididunt ut labore<br/> et dolore magna aliqua. 
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+                  tempor incididunt ut labore et dolore magna aliqua. 
                   Ut enim ad minim veniam, <br/>quis nostrud exercitation ullamco 
                   laboris nisi ut aliquip.
                 </p>
               </div>
           </div>
+
+          {/* <div className='payment_box'>
+            <div className='program_headline'><h3>Premium Program</h3></div>
+              <div className='detail_icon_text'>
+                <HiCheck />
+                <p className='detail_text'>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+                  tempor incididunt ut labore et dolore magna aliqua. 
+                  Ut enim ad minim veniam, <br/>quis nostrud exercitation ullamco 
+                  laboris nisi ut aliquip.
+                </p>
+              </div>
+              <div className='detail_icon_text'>
+                <HiCheck />
+                <p className='detail_text'>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+                  tempor incididunt ut labore et dolore magna aliqua. 
+                  Ut enim ad minim veniam, <br/>quis nostrud exercitation ullamco 
+                  laboris nisi ut aliquip.
+                </p>
+              </div>
+          </div> */}
+
         </div>
       </div>
         {/* <div className='leftSideElements'>

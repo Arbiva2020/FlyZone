@@ -27,7 +27,8 @@ function LineChart ({chartData}){
         labels: {
           usePointStyle: true,
           pointStyle: 'circle',
-          padding: 20,
+          padding: 10,
+          
         }
       }
     },

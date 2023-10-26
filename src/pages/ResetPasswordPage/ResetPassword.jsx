@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import Header from '../../components/Header/Header'
 import Button from '../../components/Generic/Button/Button'
 import Input from '../../components/Generic/Input/Input'
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai"
-import { loginDefaultState, loginDefaultValidState } from '../../constants/FormDeaults'
-import { validatePassword, validateMinMax } from '../../validators/validators'
-import './LoginPage.css'
+import { resetDefaultState, resetDefaultValidState } from '../../constants/FormDeaults'
+import { validatePassword, confirmPassword } from '../../validators/validators'
+import './ResetPassword.css'
 
-const LoginPage = () => {
-  const [loginObject, setLoginObject] = useState(loginDefaultState)
-  const [errors,setErrors] = useState([])
+const ResetPasswordPage = () => {
+  const [resetObject, setResetObject] = useState(resetDefaultState)
+  const [errors,setErrors] = useState([]) 
   const [showPassword, setShowPassword] = useState(false)
   const [showEye, setShowEye] = useState(false)
-  const [isFormValid,setIsFormValid] = useState(loginDefaultValidState)
+  const [isFormValid,setIsFormValid] = useState(resetDefaultValidState)
   const [isFormDisabled, setIsFormDisabled] = useState(true)
 
   useEffect(()=>{
@@ -38,25 +37,25 @@ const LoginPage = () => {
   }
 
   const handleChange = (name,value) => {
-    setLoginObject({...loginObject, [name]:value})
+    setResetObject({...resetObject, [name]:value})
   }
 
   const handleSubmitForm = () => {
     setErrors([])
     let isValid = true
 
-    for (const key in loginObject){
+    for (const key in resetObject){
       console.log(key)
-      if(key === "userName"){
-        isValid = validateMinMax(loginObject[key], 3, 20)
+      if(key === "newPassword"){
+        isValid = validatePassword(resetObject[key], 3, 20)
 
         if(!isValid){
-          setErrors(prev => [`${key} does not meet the requirements of minimum 3 letters or max 20 letters`,...prev])
+          setErrors(prev => [`${key} does not meet the requirements of minimum 8 letters + numbers`,...prev])
         }
       }
       
-      if(key ==="password"){
-        isValid = validatePassword(loginObject[key])
+      if(key ==="confirmNewPassword"){
+        isValid = confirmPassword(resetObject[key])
         console.log(isValid)
         if(!isValid){
           setErrors(prev => ['Password doesnt match',...prev])
@@ -66,57 +65,56 @@ const LoginPage = () => {
     if(!isValid){
       return
     }
-    console.log(loginObject)
+    console.log(resetObject)
     //take an action
   }
   
 
   return (
-    <div className='login_main'>
+    <div className='ResetPassword_main'>
       <Header />
-      <div className='login_frame'>
-      <h3 className='login_headline'>Login:</h3>
-        <form className="login_form">
-          <div className='login_form_name'>
+      <div className='ResetPassword_frame'>
+      <h3 className='ResetPassword_headline'>Reset Password:</h3>
+        <form className="ResetPassword_form">
+          <div className='ResetPassword_form_name'>
             <Input 
-               name={"userName"} 
-               value={loginObject.userName}
-               placeholder="User Name"
+               name={"newPassword"} 
+               value={resetObject.userName}
+               placeholder="New Password"
                setIsFormValid={setIsFormValid}
                onChange={(e) => handleChange(e.target.name, e.target.value)}
             />
-            <div className='wrapInputAndIcon'>
+            <div className='ResetPassword_wrapInputAndIcon'>
               <Input 
-                name={"password"} 
-                value={loginObject.password}
-                placeholder="Password"
+                name={"confirmNewPassword"} 
+                value={resetObject.password}
+                placeholder="Confirm new password"
                 setIsFormValid={setIsFormValid}
                 onBlur={(e) => handleChange(e.target.name, e.target.value)}
                 type={showPassword ? "text" : "password"}
                 onChange={(e) => handleChange(e.target.name, e.target.value)}
-                checkErrorsFunc={validateMinMax}
+                checkErrorsFunc={confirmPassword}
                 errorFuncParams={['Password', 6, 20]}
               />
-               {showEye ? <AiFillEye className="eyeIcon" onClick={toggleShowPassword}/> : <AiFillEyeInvisible className="eyeCanceldIcon" onClick={toggleShowPassword}/>}
+               {showEye ? <AiFillEye className="ResetPassword_eyeIcon" onClick={toggleShowPassword}/> : <AiFillEyeInvisible className="ResetPassword_eyeCanceldIcon" onClick={toggleShowPassword}/>}
             </div>
           </div>
         </form>
-        <div className='loginButton'>
+        <div className='ResetPassword_Button'>
           <Button 
-              text={"Login"}
+              text={"Reset"}
               isLightStyle
               onClick={handleSubmitForm}
               isDisabled={isFormDisabled}
               to="/allStats"
             />
         </div>
-        <Link className='forgotPass' to="/resetPassword">Forgot password?</Link>
       </div>
-      <div className='loginError_div'>
-            {errors.length > 0 && errors.map(error => <p className='login_error'>{error}</p>)}
+      <div className='ResetPasswordError_div'>
+            {errors.length > 0 && errors.map(error => <p className='ResetPassword_error'>{error}</p>)}
           </div> 
     </div>
   )
 }
 
-export default LoginPage
+export default ResetPasswordPage

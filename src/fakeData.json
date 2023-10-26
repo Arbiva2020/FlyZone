@@ -4,6 +4,7 @@
     "firstName": "Uri",
     "lastName": "Levi",
     "userName": "Radio BlaBla",
+    "profileImguser": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsynwv-5qtogtOwJbIjaPFJUmHpzhxgqIAug&usqp=CAU",
     "password": "53442",
     "level": "5",
     "company_id": "4", 
@@ -13,13 +14,15 @@
     "MMR": "4",
     "badges": "2",
     "numberOfFailurs": "1",
-    "totalScore": "230"
+    "totalScore": "230", 
+    "admin": "true"
   },
   {
     "id": "123455",
     "firstName": "Netta",
     "lastName": "Glory",
     "userName": "Show",
+    "profileImguser": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNDcky3ZF_NZZk3__VxrH-kC7ESKB6th_z8A&usqp=CAU",
     "password": "11442",
     "level": "3",
     "company_id": "1",
@@ -29,13 +32,15 @@
     "MMR": "6",
     "badges": "5",
     "numberOfFailurs": "3",
-    "totalScore": "550"
+    "totalScore": "550",
+    "admin": "false"
   },
   {
     "id": "123454",
     "firstName": "Anne",
     "lastName": "James",
     "userName": "Dust",
+    "profileImguser": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGDNPqYvfVXr50g4wSf4HLD4p557PbSFNdJaKHA0Sqmva990kgeqCWX32L8hlD2NNWyeU&usqp=CAU",
     "password": "50000",
     "level": "5",
     "company_id": "3",
@@ -45,7 +50,10 @@
     "MMR": "8",
     "badges": "10",
     "numberOfFailurs": "2",
-    "totalScore": "2671"
+    "totalScore": "2671",
+    "admin": "false"
   }
 ]
+
+
 

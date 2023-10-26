@@ -1,7 +1,7 @@
 import React,  {useState} from 'react'
 import AuthHeader from '../../components/AuthHeader/AuthHeader'
 import SideBar from '../../components/SideBar/SideBar'
-import { mainViewDatafake, mainViewLineData } from '../../dataFake'
+import { mainViewDatafake, mainViewLineData, maps } from '../../dataFake'
 import BarChart from '../../components/BarChart/BarChart'
 import LineChart from '../../components/LineChart/LineChart'
 import InputLabel from '@mui/material/InputLabel';
@@ -63,6 +63,68 @@ const MainViewPage = () => {
     ] 
 })
 
+console.log(maps[1].total)
+
+const [mainViewMap, setMainViewMap] = useState({
+  labels: maps.map((data) => data.name), 
+  //label: "Type of map",
+  datasets: [{
+    label: "Types of map",
+    data:[
+    maps[0].total, 
+    maps[1].total,
+    maps[2].total,
+    maps[3].total,
+    maps[4].total
+    ],
+    backgroundColor: [
+      'rgba(191, 7, 102, 0.8)',
+      'rgba(131, 4, 166, 0.8)',
+      'rgba(131, 141, 166, 0.8)',
+      'rgba(12, 141, 178, 1)',
+      'rgba(65, 136, 253, 0.88)'
+    ],
+    borderColor: [
+      'rgb(75, 192, 192)',
+      'rgb(54, 162, 235)',
+      'rgb(153, 102, 255)',
+      'rgb(201, 203, 207)'
+    ]
+  }
+  
+    // {
+    //   label: "Open desert", 
+    //   data: maps[0].total,
+    //   backgroundColor: "aqua", 
+    //   borderColor: "white"
+    // },
+    // {
+    //   label: "Woods", 
+    //   data: maps[1].total,
+    //   backgroundColor: "blue", 
+    //   borderColor: "white"
+    // },
+    // {
+    //   label: "City", 
+    //   data: maps[2].total,
+    //   backgroundColor: "white", 
+    //   borderColor: "white"
+    // },
+    // {
+    //   label: "Closed space", 
+    //   data: maps[3].total,
+    //   backgroundColor: "pink", 
+    //   borderColor: "white"
+    // }, 
+    // {
+    //   label: "Refugee camp", 
+    //   data: maps[4].total,
+    //   backgroundColor: "pink", 
+    //   borderColor: "white"
+    // }
+  ]
+})
+
   return (
     <div className='mainView_main'>
       <AuthHeader />
@@ -71,22 +133,32 @@ const MainViewPage = () => {
          <div className='mainView_center'>
           <div className='mainView_hedline'>Main View</div>
           <div className='mainView_table'>
-            <FormControl sx={{ m: 1, minWidth: 120 }}>
-                <InputLabel id="select-test-label" style={{color: "#ffffff"}}>Select group</InputLabel>
+            <FormControl sx={{m: 1, minWidth: 120, backgroundColor: 'gray'}}>
+                <InputLabel id="select-main-view-label">Select group</InputLabel>
                 <Select
-                  labelId="select-test-label"
-                  id="select-test"
+                  labelId="select-main-view-label"
+                  id="select-main-view-id"
                   value={selectValue}
                   label="Assessment type"
                   onChange={handleChange}
+                  inputProps={{
+                    MenuProps: {
+                        MenuListProps: {
+                            sx: {
+                                backgroundColor: 'rgb(45, 43, 43)',
+                                color: "white",
+                            },
+                        }
+                    }
+                }}
                 >
-                  <MenuItem value="">
+                  <MenuItem value="/">
                     <em>None</em>
                   </MenuItem>
-                  <MenuItem value={1} >Group 1 from db</MenuItem>
-                  <MenuItem value={2}>Group 2 from db</MenuItem>
-                  <MenuItem value={3}>Group 3 from db</MenuItem>
-                  <MenuItem value={4}>Group 4 from db</MenuItem>
+                  <MenuItem value={"a"}>Group 1 from db</MenuItem>
+                  <MenuItem value={"b"}>Group 2 from db</MenuItem>
+                  <MenuItem value={"c"}>Group 3 from db</MenuItem>
+                  <MenuItem value={"d"}>Group 4 from db</MenuItem>
 
                 </Select>
               </FormControl>
@@ -94,9 +166,12 @@ const MainViewPage = () => {
               <div className='mainView_line'><LineChart chartData={mainLineData} /></div>
               <div className='mainView_bar'><BarChart chartData={mainViewData} /></div>
             </div>
-            <div className='mainViewButton'>
+            <div className='mainViewButtom'>
               <div className='mainView_hedline' style={{marginTop:"0px", }}>Additional data</div>
-              <div></div>
+              <div className='mainView_charts_bottom'>
+                <div className='mainView_line'><BarChart chartData={mainViewMap} /></div>
+                <div className='mainView_bar'><BarChart chartData={mainViewMap} /></div>
+              </div>
             </div>
           </div>
          </div>

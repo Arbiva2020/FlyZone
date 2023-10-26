@@ -22,6 +22,22 @@ const GenerateTest = () => {
 const {id} = useParams
 const [testOption, setTestOptiopn] = React.useState("")
 const [testMission, setTestMission] = React.useState("")
+const [selectCompany, setSelectCompany] = React.useState("")
+const [selectGroup, setSelectGroup] = React.useState("")
+const [selectPilot, setSelectPilot] = React.useState("")
+
+const handleCompanyChange = (event) => {
+  setSelectCompany(event.target.value);
+}
+console.log(selectCompany)
+
+const handleGroupChange = (event) => {
+  setSelectGroup(event.target.value);
+}
+
+const handlePilotChange = (event) => {
+  setSelectPilot(event.target.value);
+}
 
 const handleOptionChange = (event) => {
   setTestOptiopn(event.target.value);
@@ -84,7 +100,7 @@ const handleMissionChange = (event) => {
 
       const handleAssignTestToUser = () =>{
         console.log(`test assigned to /generate/${id}`)
-        navigate(`/user/${id}`)
+        // navigate(`/user/${id}`)
       }
 
       // const handleToggleButton = () => {
@@ -92,8 +108,8 @@ const handleMissionChange = (event) => {
 
       //   }
       // }
-
-console.log(companiesDb.map((value)=>Object.values(value.name).join('')))
+      const val = companiesDb.map((value)=>Object.values(value.name).join(''))
+      console.log(val)
   return (
     <div className='generateTest_main'>
         <AuthHeader />
@@ -106,16 +122,33 @@ console.log(companiesDb.map((value)=>Object.values(value.name).join('')))
                     <div className='generateTest_headline'>
                         Generate Test
                     </div>
-                    <div className="genertateTest_scaling">
-                      <div className='generatetest_select'>
-                        <Select  
-                          label="Company" 
-                          title="Company"
-                          value={companiesDb.map((value)=><MenuItem value={testOption}>{value=Object.values(value.name).join('')}</MenuItem>)} 
-                          customStyles={{color:"secondary"}}
+                    <div className='generatetest_select'>
+                        <FormControl>
+                          <Select  
+                            title="Company"
+                            onChange={handleCompanyChange}
+                            value={selectCompany}
+                            // value={companiesDb.map((value)=><MenuItem >{value=Object.values(value.name).join('')}</MenuItem>)} 
+                            customStyles={{color:"secondary"}}
+                            labelId="select-main-view-label"
+                            id="select-main-view-id"
+                            inputProps={{
+                              MenuProps: {
+                                  MenuListProps: {
+                                      sx: {
+                                          backgroundColor: 'rgb(45, 43, 43)',
+                                          color: "white",
+                                      },
+                                  }
+                              }
+                          }}
                           >
-                            {/* {companiesDb.map((value)=><MenuItem>{value=Object.values(value.name).join('')}</MenuItem>)} */}
-                          </Select>
+                            <MenuItem value="/">
+                              <em>None</em>
+                            </MenuItem>
+                              {companiesDb.map((value)=>{<MenuItem >{Object.values(value.name).join('')}</MenuItem>})}
+                            </Select>
+                        </FormControl>
                         <Select 
                           label="Group" 
                           title="Group"
@@ -129,9 +162,10 @@ console.log(companiesDb.map((value)=>Object.values(value.name).join('')))
                           customStyles={{color:"secondary"}}
                         />
                       </div>
+                    <div className="genertateTest_scaling">
                       <div className='geberateTest_up'>
                         <div className='scaling_left'>
-                          <div className='left_headline'>Environment</div>
+                          <div className='left_headline'>Environment parameters:</div>
                                   {/* <SliderGeneric 
                                       aria-label="small steps"
                                       defaultValue={1}
@@ -151,12 +185,12 @@ console.log(companiesDb.map((value)=>Object.values(value.name).join('')))
                                     <div className='generate_environment_select'><Select /></div>
                                   </div>
                                   <div className='generate_environment'>
-                                    <div className='generate_environment_text'>Senario:</div>
+                                    <div className='generate_environment_text'>Map:</div>
                                     <div className='generate_environment_select'><Select /></div>
                                   </div>
                           </div>
                         <div className='scaling_right'>
-                            <div className='right_headline'>Mission scope</div>
+                            <div className='right_headline'>Mission scope parameters:</div>
                             <div>
                               <div>{testGeneratingConditions.map((data) => 
                                 <div>
@@ -176,7 +210,7 @@ console.log(companiesDb.map((value)=>Object.values(value.name).join('')))
                                   )}
                               </div>
                             </div>
-                              <Box sx={{ width: 200 }}>
+                              {/* <Box sx={{ width: 200 }}>
                                 <div className='genertateTest_slider'>
                                   <div className='genertateTest_parameter'>{'dataTitle'}</div>
                                   <Slider
@@ -203,13 +237,14 @@ console.log(companiesDb.map((value)=>Object.values(value.name).join('')))
                                     marks={true}
                                 />
                                 </div>
-                              </Box>
+                              </Box> */}
           
                             </div>
                           </div>
                           <div className='generateTest_button'>
                             <Button 
                               text="Generate"
+                              onClick={handleAssignTestToUser}
                             />
                           </div>
                     </div>

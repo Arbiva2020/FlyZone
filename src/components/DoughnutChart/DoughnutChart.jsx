@@ -19,19 +19,21 @@ function DoughnutChart ({chartData}) {
   const options = {
     plugins: {
       legend: {
-        position: 'bottom',
+        position: 'left',
         // rtl : true,
         labels: {
           usePointStyle: true,
           pointStyle: 'circle',
-          padding: 20,
+          padding: 10,
         }
       }
     },
 }
-  return <Doughnut 
+  return <Doughnut
+            style={{width:"200px", height:"200px"}} 
             data={chartData} 
             options={options}>
+            
           </Doughnut>;
 }
 

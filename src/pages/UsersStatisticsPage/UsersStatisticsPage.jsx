@@ -225,7 +225,7 @@ console.log(rows)
                   assessment overdue:
                 </div>
                 <div className="users_doughnut"><DoughnutChart
-                        // customStyles={{width:"50px"}} 
+                        customStyles={{width:"50px"}} 
                         chartData={userDoughnutData}
                         options={{}}
                       />

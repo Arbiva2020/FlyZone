@@ -176,25 +176,82 @@ export const pieData =
         }
     ]
     
-    export const scenario = [
+    export const maps = [
         {
-            id: 1, 
-            map: "../../", 
+            id: 1,
+            total: "2", //in the future, this will be gone and the sum of all usage of this specific map will appear un the chart of "main view"
+            name: "open desert", 
+            map: "../../map.png", 
             characteristics: ["desert", "open space", "arrid", "empty", "middle east"]
         },
         {
-            id: 2, 
+            id: 2,
+            total: "4", //in the future, this will be gone and the sum of all usage of this specific map will appear un the chart of "main view"
+            name: "woods",  
             map: "image", 
             characteristics: ["trees", "open space", "obsticle", "forest", "middle east", "high density"]
         },
         {
             id: 3, 
+            total: "6", //in the future, this will be gone and the sum of all usage of this specific map will appear un the chart of "main view"
+            name: "city", 
             map: "image", 
             characteristics: ["city", "open space", "building", "crouded", "manuvre"]
         },
         {
-            id: 4, 
+            id: 4,
+            total: "1", //in the future, this will be gone and the sum of all usage of this specific map will appear un the chart of "main view" 
+            name: "closed space", 
             map: "image", 
             characteristics: ["closed space ", "open space", "empty", "high density"]
+        },
+        {
+            id: 5, 
+            total: "3", //in the future, this will be gone and the sum of all usage of this specific map will appear un the chart of "main view"
+            name: "refugee camp", 
+            map: "image", 
+            characteristics: ["refugee", "camp", "high density", "crowded"]
+        },
+    ]
+
+
+    export const scenarios = [
+        {
+            id: 1, 
+            scenarioName: "surveillance",
+            difficulty_level: [2, 3] 
+        },
+        {
+            id: 2, 
+            scenarioName: "photography",
+            difficulty_level: [1, 2]  
+        },
+        {
+            id: 3, 
+            scenarioName: "delivery",
+            difficulty_level: [2, 3]  
+        },
+        {
+            id: 4, 
+            scenarioName: "collection",
+            difficulty_level: [2, 3]  
+        },
+        {
+            id: 4, 
+            scenarioName: "targeting",
+            difficulty_level: [3, 4, 5]  
+        },
+        {
+            id: 4, 
+            scenarioName: "indoors", 
+            difficulty_level: [4, 5]  
         }
     ]
+
+    export const adminList = 
+    {
+        userName: "admin",
+        password: "admin10",
+        profileImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRudDbHeW2OobhX8E9fAY-ctpUAHeTNWfaqJA&usqp=CAU",
+        lastLoggedIn: new Date().getTime,
+    }

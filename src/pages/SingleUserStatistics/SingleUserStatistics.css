@@ -90,7 +90,7 @@
     justify-content: center;
     position: relative;
     margin: 0px 20px 0px 0px;
-    padding-top: 3%;
+    padding: 2%;
 }
 
 .singleUser_bar_right {
@@ -103,7 +103,7 @@
     justify-content: center;
     position: relative;
     margin: 0px 0px 0px 20px;
-    padding-top: 3%;
+    padding: 2%
 }
 
 .singleUser_lower_chart_section{
@@ -169,16 +169,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-around; 
+    border-style: inset;
 }
 
 .singleUser_num_numLeft {
-    width: 200px;
+    /* width: 200px;
     height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    position: relative; */
+    padding: 10px;
 }
 
 .singleUser_num_textLeft, .singleUser_num_textMiddle, .singleUser_num_textRight {
@@ -198,6 +200,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 50%;
+    width: 60%;
     align-items: center;
 }
