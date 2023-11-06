@@ -19,6 +19,7 @@ import DemoPage from '../pages/DemoPage/DemoPage'
 import GenerateTest from '../pages/GenerateTest/GenerateTest'
 import UserMapPage from '../pages/UserMapPage/UserMapPage'
 import AddUser from '../pages/AddUser/AddUser'
+import MapAndMissionPage from '../pages/MapAndMissionPage/MapAndMissionPage'
 
 const Router = () => {
   return (
@@ -40,6 +41,7 @@ const Router = () => {
             <Route path="demo" element={<DemoPage/>} />
             <Route path="report" element={<UserReport/>} />
             <Route path="add" element={<AddUser/>} />
+            <Route path="MapAndMission" element={<MapAndMissionPage/>} />
             <Route path="resetPassword" element={<ResetPasswordPage/>} />
             <Route path="generate/:id" element={<GenerateTest/>} />
             <Route path="map/:id" element={<UserMapPage/>} />

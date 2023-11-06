@@ -1,3 +1,11 @@
+import Map from "../src/assets/map.png";
+import Map1 from "../src/assets/map1.png";
+import Map2 from "../src/assets/map2.png";
+import Map3 from "../src/assets/map3.png";
+import Map4 from "../src/assets/map4.png";
+import Map5 from "../src/assets/map5.png";
+
+
 export const datafake = [
     {
         id: "test1", 
@@ -181,36 +189,41 @@ export const pieData =
             id: 1,
             total: "2", //in the future, this will be gone and the sum of all usage of this specific map will appear un the chart of "main view"
             name: "open desert", 
-            map: "../../map.png", 
-            characteristics: ["desert", "open space", "arrid", "empty", "middle east"]
+            map: {Map}, 
+            characteristics: ["desert", "open space", "arrid", "empty", "middle east"],
+            description: "This map will be used for scenarios that require flying in open areas and coaping with challanges such as reception problems"
         },
         {
             id: 2,
             total: "4", //in the future, this will be gone and the sum of all usage of this specific map will appear un the chart of "main view"
             name: "woods",  
-            map: "image", 
-            characteristics: ["trees", "open space", "obsticle", "forest", "middle east", "high density"]
+            map: {Map1}, 
+            characteristics: ["trees", "open space", "obsticle", "forest", "middle east", "high density"], 
+            description: "This map will is good for scenarios that require flying in crowded areas"
         },
         {
             id: 3, 
             total: "6", //in the future, this will be gone and the sum of all usage of this specific map will appear un the chart of "main view"
             name: "city", 
-            map: "image", 
-            characteristics: ["city", "open space", "building", "crouded", "manuvre"]
+            map: {Map2}, 
+            characteristics: ["city", "open space", "building", "crouded", "manuvre"], 
+            description: "This map will be used for scenarios that AAAAAAAAAAAAAAA"
         },
         {
             id: 4,
             total: "1", //in the future, this will be gone and the sum of all usage of this specific map will appear un the chart of "main view" 
             name: "closed space", 
-            map: "image", 
-            characteristics: ["closed space ", "open space", "empty", "high density"]
+            map: {Map3}, 
+            characteristics: ["closed space ", "open space", "empty", "high density"], 
+            description: "This map will be used for scenarios that require BBBBBBBBBBBBBBBBBBBBBBBB"
         },
         {
             id: 5, 
             total: "3", //in the future, this will be gone and the sum of all usage of this specific map will appear un the chart of "main view"
             name: "refugee camp", 
-            map: "image", 
-            characteristics: ["refugee", "camp", "high density", "crowded"]
+            map: {Map4}, 
+            characteristics: ["refugee", "camp", "high density", "crowded"], 
+            description: "This map will be used for scenarios that require CCCCCCCCCCCCCCCCCCC"
         },
     ]
 
