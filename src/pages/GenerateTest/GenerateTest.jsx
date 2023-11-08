@@ -8,7 +8,7 @@ import Switch from '../../components/Generic/Switch/Switch'
 import Select from "../../components/Generic/Select/Select"
 import Button from '../../components/Generic/Button/Button'
 import '../../fakeData.json'
-import { companiesDb } from '../../dataFake'
+import { companiesDb, scenarios } from '../../dataFake'
 import { testGeneratingParams } from '../GenerateTest/GenerateTestData'
 import {testGeneratingConditions} from '../GenerateTest/GenerateTestData'
 import InputLabel from '@mui/material/InputLabel';
@@ -16,6 +16,8 @@ import MenuItem from '@mui/material/MenuItem';
 import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import SliderGeneric from '../../components/Generic/SliderGeneric/SliderGeneric';
+import {FiInfo} from 'react-icons/fi'
+import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom';
 
 const GenerateTest = () => {
@@ -25,6 +27,8 @@ const [testMission, setTestMission] = React.useState("")
 const [selectCompany, setSelectCompany] = React.useState("")
 const [selectGroup, setSelectGroup] = React.useState("")
 const [selectPilot, setSelectPilot] = React.useState("")
+const [scenarioOptions, setScenarioOptiopn] = React.useState("")
+
 
 const handleCompanyChange = (event) => {
   setSelectCompany(event.target.value);
@@ -178,15 +182,43 @@ const handleMissionChange = (event) => {
                                   /> */}
                                   <div className='generate_environment'>
                                     <div className='generate_environment_text'>Senario:</div>
-                                    <div className='generate_environment_select'><Select /></div>
+                                    <div className='generate_environment_select'> 
+                                      <Select 
+                                        label="Choose scenario" 
+                                        title="Choose scenario"
+                                        value={scenarios.map((value)=><MenuItem value={scenarioOptions}>{value=Object.values(value.scenarioName).join('')}</MenuItem>)} 
+                                        customStyles={{color:"secondary"}}
+                                      />
+                                    </div>
                                   </div>
                                   <div className='generate_environment'>
                                     <div className='generate_environment_text'>Mission Type:</div>
-                                    <div className='generate_environment_select'><Select /></div>
+                                    <div className='generate_environment_select'>
+                                      <Select 
+                                        label="Choose scenario" 
+                                        title="Choose scenario"
+                                        value={scenarios.map((value)=><MenuItem value={scenarioOptions}>{value=Object.values(value.scenarioName).join('')}</MenuItem>)} 
+                                        customStyles={{color:"secondary"}}
+                                      />
+                                    </div>
                                   </div>
                                   <div className='generate_environment'>
                                     <div className='generate_environment_text'>Map:</div>
-                                    <div className='generate_environment_select'><Select /></div>
+                                    <div className='generate_environment_select'  style={{display:"flex", alignItems:"center"}}>
+                                      <Select 
+                                        label="Choose scenario" 
+                                        title="Choose scenario"
+                                        value={scenarios.map((value)=><MenuItem value={scenarioOptions}>{value=Object.values(value.scenarioName).join('')}</MenuItem>)} 
+                                        customStyles={{color:"secondary"}}
+                                      />
+                                     <Link className='information_link' to="/mapAndMission">
+                                      <sup>
+                                        <FiInfo 
+                                          style={{fontSize:"100%", color:"white"}}
+                                        />
+                                      </sup>
+                                    </Link> 
+                                    </div>
                                   </div>
                           </div>
                         <div className='scaling_right'>
@@ -210,7 +242,7 @@ const handleMissionChange = (event) => {
                                   )}
                               </div>
                             </div>
-                              {/* <Box sx={{ width: 200 }}>
+                              <Box sx={{ width: 200 }}>
                                 <div className='genertateTest_slider'>
                                   <div className='genertateTest_parameter'>{'dataTitle'}</div>
                                   <Slider
@@ -237,7 +269,7 @@ const handleMissionChange = (event) => {
                                     marks={true}
                                 />
                                 </div>
-                              </Box> */}
+                              </Box>
           
                             </div>
                           </div>

@@ -41,7 +41,7 @@ const Router = () => {
             <Route path="demo" element={<DemoPage/>} />
             <Route path="report" element={<UserReport/>} />
             <Route path="add" element={<AddUser/>} />
-            <Route path="MapAndMission" element={<MapAndMissionPage/>} />
+            <Route path="mapAndMission" element={<MapAndMissionPage/>} />
             <Route path="resetPassword" element={<ResetPasswordPage/>} />
             <Route path="generate/:id" element={<GenerateTest/>} />
             <Route path="map/:id" element={<UserMapPage/>} />

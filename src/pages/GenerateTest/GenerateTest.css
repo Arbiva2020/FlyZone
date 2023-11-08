@@ -92,6 +92,7 @@
     display: flex;
     flex-direction: row;
     width: 100%;
+    align-items: center;
 }
 
 .generate_environment_text {
@@ -99,6 +100,7 @@
     margin-right: 20px;
     font-weight: lighter;
     align-self: center;
+    display: contents;
 }
 
 .generate_environment_select {
@@ -109,4 +111,8 @@
     display: flex;
     align-self: self-end;
     margin: 0px 20px 20px 0px;
+}
+
+.information_link {
+    color: "white";
 }

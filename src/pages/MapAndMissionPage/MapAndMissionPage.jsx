@@ -7,26 +7,26 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Input from "../../components/Generic/Input/Input";
 // import Map from '../../assets/map.png'
 import '../MapAndMissionPage/MapAndMissionPage.css'
-import { maps } from '../../dataFake'
+import { FaSearch } from "react-icons/fa";
+import { datafake, maps } from '../../dataFake'
 
 function MapAndMissionPage() {
-let allMaps = maps.map((value) => value)
-console.log(allMaps)
-maps.slice(0, 3).map((item)=> console.log(item))
-// let seperateElements = []
-// let eachRow = []
-// function seperateToRowes(){
-//     for(i=0; i<allMaps.length; i+=3){
-//         eachRow.push(allMaps.slice(i, i+3).map(item => {
-//             return <div>{item}</div>
-//         }))
-//         seperateElements.push(eachRow.map(item => {return <div>{item}</div>}))
-//     }
-// return seperateElements;
-// }
-// console.log(seperateToRowes)
+const [searchFilter, setSearchFilter] = React.useState("");
+const [filterMaps, setFilterMaps] = React.useState();
+// const [data, setData] = useState(maps);
+
+
+const hadleSearchFilter = ({ target: { value } }) => {
+    setSearchFilter(value);
+    datafake.filter((map)=> {
+        for (const map in maps) {
+            if (map[key].toLowerCase().includes(value.toLowerCase())) return true;
+        }
+    })
+}
 
   return (
     <div className='mapAndMission_main'>
@@ -35,7 +35,25 @@ maps.slice(0, 3).map((item)=> console.log(item))
             <SideBar />
             <div className='mapAndMission_body'>
                 <div className='mapAndMission_hedline'>
-                    Map Viewer
+                    Map Types and Characteristics
+                </div>
+                <div className="mapAndMission_operations">
+                    <Input
+                        name={"search"}
+                        value={searchFilter}
+                        placeholder="Search"
+                        onChange={hadleSearchFilter}
+                        customStyles={{ width: "300px" }}
+                        onBlur={(event) =>
+                          hadleSearchFilter(event.target.name, event.target.value)
+                        }
+                    />
+                    <i 
+                        className="users_icon" 
+                        onClick={hadleSearchFilter}
+                        >
+                            <FaSearch />
+                    </i>
                 </div>
                 <div className='mapAndMission_cards'>
                     {maps.map((value) => 
@@ -46,8 +64,7 @@ maps.slice(0, 3).map((item)=> console.log(item))
                             <Typography gutterBottom variant="h5" component="div">{(value.name)}</Typography>
                             <Typography variant="body2" color="text.secondary">{value.description}</Typography>
                             <CardActions>
-                                <Button size="small">Share</Button>
-                                <Button size="small">Learn More</Button>
+                                <Button size="small" style={{color: "white", borderStyle:"solid", borderColor:"white", borderWidth:"1px", borderRadius:"10px"}}>Learn More</Button>
                             </CardActions>
                         </CardContent>
                         </CardMedia>
