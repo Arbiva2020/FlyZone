@@ -191,7 +191,8 @@ export const pieData =
             name: "Open desert", 
             map: Map, 
             characteristics: ["desert", "open space", "arrid", "empty", "middle east"],
-            description: "This map will be used for scenarios that require flying in open areas and coaping with challanges such as reception problems"
+            description: "This map will be used for scenarios that require flying in open areas and coaping with challanges such as reception problems",
+            additionalData: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut "
         },
         {
             id: 2,
@@ -199,7 +200,8 @@ export const pieData =
             name: "Woods",  
             map: Map1, 
             characteristics: ["trees", "open space", "obsticle", "forest", "middle east", "high density"], 
-            description: "This map will is good for scenarios that require flying in crowded areas"
+            description: "This map will is good for scenarios that require flying in crowded areas", 
+            additionalData:"aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur",
         },
         {
             id: 3, 
@@ -207,7 +209,8 @@ export const pieData =
             name: "City", 
             map: Map2, 
             characteristics: ["city", "open space", "building", "crouded", "manuvre"], 
-            description: "This map will be used for scenarios that AAAAAAAAAAAAAAA"
+            description: "This map will be used for scenarios that AAAAAAAAAAAAAAA",
+            additionalData:"Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
         },
         {
             id: 4,
@@ -215,7 +218,8 @@ export const pieData =
             name: "Closed space", 
             map: Map3, 
             characteristics: ["closed space ", "open space", "empty", "high density"], 
-            description: "This map will be used for scenarios that require BBBBBBBBBBBBBBBBBBBBBBBB"
+            description: "This map will be used for scenarios that require BBBBBBBBBBBBBBBBBBBBBBBB",
+            additionalData:"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo",
         },
         {
             id: 5, 
@@ -223,7 +227,8 @@ export const pieData =
             name: "Refugee camp", 
             map: Map4, 
             characteristics: ["refugee", "camp", "high density", "crowded"], 
-            description: "This map will be used for scenarios that require CCCCCCCCCCCCCCCCCCC"
+            description: "This map will be used for scenarios that require CCCCCCCCCCCCCCCCCCC",
+            additionalData:"Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt",
         },
         {
             id: 6, 
@@ -231,7 +236,8 @@ export const pieData =
             name: "Open sea", 
             map: Map4, 
             characteristics: ["refugee", "camp", "high density", "crowded"], 
-            description: "This map will be used for scenarios that require CCCCCCCCCCCCCCCCCCC"
+            description: "This map will be used for scenarios that require CCCCCCCCCCCCCCCCCCC",
+            additionalData:"Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem",
         },
         {
             id: 7, 
@@ -239,7 +245,8 @@ export const pieData =
             name: "Port", 
             map: Map1, 
             characteristics: ["refugee", "camp", "high density", "crowded"], 
-            description: "This map will be used for scenarios that require CCCCCCCCCCCCCCCCCCC"
+            description: "This map will be used for scenarios that require CCCCCCCCCCCCCCCCCCC", 
+            additionalData:"Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? ",
         },
         {
             id: 8, 
@@ -247,7 +254,8 @@ export const pieData =
             name: "Combined scene", 
             map: Map2, 
             characteristics: ["refugee", "camp", "high density", "crowded"], 
-            description: "This map will be used for scenarios that require CCCCCCCCCCCCCCCCCCC"
+            description: "This map will be used for scenarios that require CCCCCCCCCCCCCCCCCCC",
+            additionalData:"Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
         },
     ]
 

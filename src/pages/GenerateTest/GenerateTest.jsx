@@ -126,6 +126,7 @@ const handleMissionChange = (event) => {
                     <div className='generateTest_headline'>
                         Generate Test
                     </div>
+                  <div className='generatetest_centerGeneration'>
                     <div className='generatetest_select'>
                         <FormControl>
                           <Select  
@@ -166,124 +167,124 @@ const handleMissionChange = (event) => {
                           customStyles={{color:"secondary"}}
                         />
                       </div>
-                    <div className="genertateTest_scaling">
-                      <div className='geberateTest_up'>
-                        <div className='scaling_left'>
-                          <div className='left_headline'>Environment parameters:</div>
-                                  {/* <SliderGeneric 
-                                      aria-label="small steps"
+                    <div className='generate_frames'>
+                      <div className="genertateTest_scaling">
+                        <div className='geberateTest_up'>
+                          <div className='scaling_left'>
+                            <div className='left_headline'>Environment parameters:</div>
+                                    {/* <SliderGeneric 
+                                        aria-label="small steps"
+                                        defaultValue={1}
+                                        getAriaValueText={valuetext}
+                                        step={1}
+                                        min={1}
+                                        max={10}
+                                        valueLabelDisplay="auto"
+                                        marks={true}
+                                    /> */}
+                                    <div className='generate_environment'>
+                                      <div className='generate_environment_text'>Senario:</div>
+                                      <div className='generate_environment_select'> 
+                                        <Select 
+                                          label="Choose scenario" 
+                                          title="Choose scenario"
+                                          value={scenarios.map((value)=><MenuItem value={scenarioOptions}>{value=Object.values(value.scenarioName).join('')}</MenuItem>)} 
+                                          customStyles={{color:"secondary"}}
+                                        />
+                                      </div>
+                                    </div>
+                                    <div className='generate_environment'>
+                                      <div className='generate_environment_text'>Mission Type:</div>
+                                      <div className='generate_environment_select'>
+                                        <Select 
+                                          label="Choose scenario" 
+                                          title="Choose scenario"
+                                          value={scenarios.map((value)=><MenuItem value={scenarioOptions}>{value=Object.values(value.scenarioName).join('')}</MenuItem>)} 
+                                          customStyles={{color:"secondary"}}
+                                        />
+                                      </div>
+                                    </div>
+                                    <div className='generate_environment'>
+                                      <div className='generate_environment_text'>Map:</div>
+                                      <div className='generate_environment_select'  style={{display:"flex", alignItems:"center"}}>
+                                        <Select 
+                                          label="Choose scenario" 
+                                          title="Choose scenario"
+                                          value={scenarios.map((value)=><MenuItem value={scenarioOptions}>{value=Object.values(value.scenarioName).join('')}</MenuItem>)} 
+                                          customStyles={{color:"secondary"}}
+                                        />
+                                      <Link className='information_link' to="/mapAndMission">
+                                        <sup>
+                                          <FiInfo 
+                                            style={{fontSize:"100%", color:"white"}}
+                                          />
+                                        </sup>
+                                      </Link> 
+                                      </div>
+                                    </div>
+                            </div>
+                          <div className='scaling_right'>
+                              <div className='right_headline'>Mission scope parameters:</div>
+                              <div>
+                                <div className='generate_parameters'>{testGeneratingConditions.map((data) => 
+                                  <div className='generate_parameter'>
+                                    <div className='generate_text'>
+                                      {data.title}
+                                    </div>
+                                    <Slider 
                                       defaultValue={1}
                                       getAriaValueText={valuetext}
-                                      step={1}
-                                      min={1}
-                                      max={10}
-                                      valueLabelDisplay="auto"
+                                      step={data.step}
+                                      min={data.min}
+                                      max={data.max}
                                       marks={true}
-                                  /> */}
-                                  <div className='generate_environment'>
-                                    <div className='generate_environment_text'>Senario:</div>
-                                    <div className='generate_environment_select'> 
-                                      <Select 
-                                        label="Choose scenario" 
-                                        title="Choose scenario"
-                                        value={scenarios.map((value)=><MenuItem value={scenarioOptions}>{value=Object.values(value.scenarioName).join('')}</MenuItem>)} 
-                                        customStyles={{color:"secondary"}}
-                                      />
-                                    </div>
+                                      disabled={false}
+                                      valueLabelDisplay="auto"
+                                      aria-label="small steps"
+                                      style={{color: "purple"}}
+                                    />
                                   </div>
-                                  <div className='generate_environment'>
-                                    <div className='generate_environment_text'>Mission Type:</div>
-                                    <div className='generate_environment_select'>
-                                      <Select 
-                                        label="Choose scenario" 
-                                        title="Choose scenario"
-                                        value={scenarios.map((value)=><MenuItem value={scenarioOptions}>{value=Object.values(value.scenarioName).join('')}</MenuItem>)} 
-                                        customStyles={{color:"secondary"}}
-                                      />
-                                    </div>
-                                  </div>
-                                  <div className='generate_environment'>
-                                    <div className='generate_environment_text'>Map:</div>
-                                    <div className='generate_environment_select'  style={{display:"flex", alignItems:"center"}}>
-                                      <Select 
-                                        label="Choose scenario" 
-                                        title="Choose scenario"
-                                        value={scenarios.map((value)=><MenuItem value={scenarioOptions}>{value=Object.values(value.scenarioName).join('')}</MenuItem>)} 
-                                        customStyles={{color:"secondary"}}
-                                      />
-                                     <Link className='information_link' to="/mapAndMission">
-                                      <sup>
-                                        <FiInfo 
-                                          style={{fontSize:"100%", color:"white"}}
-                                        />
-                                      </sup>
-                                    </Link> 
-                                    </div>
-                                  </div>
-                          </div>
-                        <div className='scaling_right'>
-                            <div className='right_headline'>Mission scope parameters:</div>
-                            <div>
-                              <div>{testGeneratingConditions.map((data) => 
-                                <div>
-                                  {data.title}
-                                  <Slider 
-                                    defaultValue={1}
-                                    getAriaValueText={valuetext}
-                                    step={data.step}
-                                    min={data.min}
-                                    max={data.max}
-                                    marks={data.marks}
-                                    disabled={false}
-                                    valueLabelDisplay="auto"
-                                    aria-label="small steps"
-                                  />
+                                    )}
                                 </div>
-                                  )}
+                              </div>
                               </div>
                             </div>
-                              <Box sx={{ width: 200 }}>
-                                <div className='genertateTest_slider'>
-                                  <div className='genertateTest_parameter'>{'dataTitle'}</div>
-                                  <Slider
-                                      aria-label="small steps"
-                                      defaultValue={1}
-                                      getAriaValueText={valuetext}
-                                      step={1}
-                                      min={1}
-                                      max={10}
-                                      valueLabelDisplay="auto"
-                                      marks={true}
-                                  />
-                                </div>
-                                <div className='genertateTest_slider'>
-                                  <div className='genertateTest_parameter'>{'dataTitle'}</div>
-                                   <Slider
-                                    aria-label="small steps"
-                                    defaultValue={1}
-                                    getAriaValueText={valuetext}
-                                    step={1}
-                                    min={1}
-                                    max={10}
-                                    valueLabelDisplay="auto"
-                                    marks={true}
-                                />
-                                </div>
-                              </Box>
-          
+                            <div className='generateTest_button'>
+                              <Button 
+                                text="Generate"
+                                onClick={handleAssignTestToUser}
+                              />
                             </div>
-                          </div>
-                          <div className='generateTest_button'>
-                            <Button 
-                              text="Generate"
-                              onClick={handleAssignTestToUser}
-                            />
-                          </div>
+                      </div>
+                      <div className="genertateTest_scaling">
+                        <div className='geberateTest_up'>
+                          <div className='scaling_left'>
+                            <div className='left_headline'>Environment parameters:</div>
+                                    <div className='generate_environment'>
+                                      
+                                    </div>
+                                    <div className='generate_environment'>
+                                      
+                                    </div>
+                                    <div className='generate_environment'>
+                                      
+                                    </div>
+                            </div>
+                          <div className='scaling_right'>
+                              <div className='right_headline'>Mission scope parameters:</div>
+                              <div>
+                                
+                              </div>
+                              </div>
+                            </div>
+                          
+                    </div>
                     </div>
                     <div className='geberateTest_down'> 
                       <switch></switch>
                       {handleAssignTestToUser ?  <progress className='genertateTest_progress'></progress> : <Button customStyles={{}} onClick={handleAssignTestToUser}/>} 
                     </div> 
+                  </div>
                 </div>
             </div>
         </div>
