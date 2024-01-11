@@ -142,7 +142,7 @@ const handleMissionChange = (event) => {
                                   MenuListProps: {
                                       sx: {
                                           backgroundColor: 'rgb(45, 43, 43)',
-                                          color: "white",
+                                          color: "black",
                                       },
                                   }
                               }
@@ -158,7 +158,7 @@ const handleMissionChange = (event) => {
                           label="Group" 
                           title="Group"
                           value={companiesDb.map((value)=><MenuItem value={testOption}>{value=Object.values(value.name).join('')}</MenuItem>)} 
-                          customStyles={{color:"secondary"}}
+                          customStyles={{color:"black"}}
                         />
                         <Select 
                           label="Pilot" 
@@ -183,7 +183,7 @@ const handleMissionChange = (event) => {
                                         marks={true}
                                     /> */}
                                     <div className='generate_environment'>
-                                      <div className='generate_environment_text'>Senario:</div>
+                                      <div className='generate_environment_text'>Scenario:</div>
                                       <div className='generate_environment_select'> 
                                         <Select 
                                           label="Choose scenario" 

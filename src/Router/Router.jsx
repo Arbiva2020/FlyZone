@@ -20,6 +20,7 @@ import GenerateTest from '../pages/GenerateTest/GenerateTest'
 import UserMapPage from '../pages/UserMapPage/UserMapPage'
 import AddUser from '../pages/AddUser/AddUser'
 import MapAndMissionPage from '../pages/MapAndMissionPage/MapAndMissionPage'
+import DummyPage from '../pages/DummyPage/DummyPage'
 
 const Router = () => {
   return (
@@ -27,6 +28,7 @@ const Router = () => {
         <Routes>
             <Route path="/" element={<HomePage />}/>
             <Route path="splash" element={<SplashScreenPage />}/>
+            <Route path="dummy" element={<DummyPage />}/>
             <Route path="about" element={<AboutPage />}/>
             <Route path="login" element={<LoginPage />}/>
             <Route path="register" element={<RegisterPage />} />

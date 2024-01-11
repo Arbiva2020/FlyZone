@@ -7,9 +7,10 @@ import './SingleUserStatistics.css'
 import BarChart from '../../components/BarChart/BarChart'
 import PieChart from '../../components/PieChart/PieChart'
 import LineChart from '../../components/LineChart/LineChart'
+import HorizontalBarChart from '../../components/HorizontalBarChart/HorizontalBarChart'
 import UserSideData from '../../components/UserSideData/UserSideData'
 import Button from '../../components/Generic/Button/Button'
-import { lineData, pieData, datafake } from '../../dataFake'
+import { lineData, pieData, datafake, horizontalBarData } from '../../dataFake'
 import DoughnutChart from '../../components/DoughnutChart/DoughnutChart';
 import { Chart as ChartJS, Colors } from 'chart.js/auto'
 import { IoMdArrowDropdownCircle } from "react-icons/io";
@@ -80,6 +81,40 @@ function SingleUserStatistics(props) {
       },
     ]
   })
+
+
+
+  const [singleuserHorizontalData, setSingleuserHorizontalData] = useState({
+    labels: Object.keys(horizontalBarData[0]), 
+    datasets: [
+      {
+        axis:"y",
+        data: Object.values(horizontalBarData[0]), 
+        borderColor: [
+          'rgb(0, 0, 0)'
+        ],
+        backgroundColor: [
+          'rgb(255, 99, 132)'
+        ],
+        borderWidth:1,
+        label:"User avg"
+      },
+      {
+        axis:"y",
+        data: Object.values(horizontalBarData[1]), 
+        borderColor: [
+          'rgb(0, 0, 0)'
+        ],
+        backgroundColor: [
+          'rgb(255, 159, 64)'
+        ],
+        borderWidth:1,
+        label:"Total avg"
+      },
+    ]
+  })
+  console.log(Object.values(horizontalBarData[0]))
+  console.log(Object.values(horizontalBarData[1]))
 
   const [singleuserLineData, setSingleuserLineData] = useState({
     labels: Object.keys(lineData),
@@ -159,23 +194,23 @@ const handleNavigateToUserPage = (id)=>{
                 <h2 style={{color:"lightblue", fontSize:"300%"}}>35%</h2>
                 <div className='singleUserTrend'>
                   <p style={{fontSize:"80%"}}>Increase</p>
-                  {(<p>Decrease</p> ? <IoMdArrowDropdownCircle style={{color:"red"}}/> : <IoMdArrowDropupCircle style={{color:"green"}}/>)}
+                  {(<p>Decrease</p> ? <IoMdArrowDropdownCircle style={{color:"red", marginLeft:"5px"}}/> : <IoMdArrowDropupCircle style={{color:"green", marginLeft:"5px"}}/>)}
                 </div>
               </div>
               <div className='singleUser_SubInfo'>
                 <h4>Success rate</h4>
                 <h2 style={{color:"lightcoral", fontSize:"300%"}}>90%</h2>
                 <div className='singleUserTrend'>
-                  <p style={{fontSize:"80%"}}>decrease</p>
-                  {(<p>Decrease</p> ? <IoMdArrowDropdownCircle style={{color:"red"}}/> : <IoMdArrowDropupCircle style={{color:"green"}}/>)}
+                  <p style={{fontSize:"80%"}}>Decrease</p>
+                  {(<p>Decrease</p> ? <IoMdArrowDropdownCircle style={{color:"red", marginLeft:"5px"}}/> : <IoMdArrowDropupCircle style={{color:"green", marginLeft:"5px"}}/>)}
                 </div>
               </div>
               <div className='singleUser_SubInfo'>
-                <h4>Batart usage</h4>
+                <h4>Batary usage</h4>
                 <h2 style={{color:"pink", fontSize:"300%"}}>72%</h2>
                 <div className='singleUserTrend'>
-                  <p style={{fontSize:"80%"}}>decrease</p>
-                  {(<p>Decrease</p> ? <IoMdArrowDropdownCircle style={{color:"red"}}/> : <IoMdArrowDropupCircle style={{color:"green"}}/>)}
+                  <p style={{fontSize:"80%"}}>Decrease</p>
+                  {(<p>Decrease</p> ? <IoMdArrowDropdownCircle style={{color:"red", marginLeft:"5px"}}/> : <IoMdArrowDropupCircle style={{color:"green", marginLeft:"5px"}}/>)}
                 </div>
               </div>
             </div>
@@ -185,7 +220,8 @@ const handleNavigateToUserPage = (id)=>{
               <BarChart chartData={singleuserData} />
             </div>
             <div className='singleUser_bar_right'>
-              <LineChart chartData={singleuserLineData} />
+              {/* <LineChart chartData={singleuserLineData} /> */}
+              <BarChart chartData={singleuserHorizontalData} />
             </div>
           </div>
           <div className='singleUser_pie_section'>

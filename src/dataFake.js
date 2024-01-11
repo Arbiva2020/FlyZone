@@ -67,6 +67,12 @@ export const pieData =
         timeOut: 10,
     }
 
+    export const horizontalBarData = 
+    [
+        {crash: 30, battary: 10, targeted: 15, wind: 15, balancing: 25, timeOut: 5},
+        {crash_AVG: 20, battary_AVG: 40, targeted_AVG: 10, wind_AVG: 5, balancing_AVG: 15, timeOut_AVG: 10},
+    ]
+
     export const DoughnutDataBadges = 
     {
         totalBadges: 10, 

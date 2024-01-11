@@ -59,7 +59,7 @@
     border-width: 1px;
     border-radius: 20px;
     border-color: white;
-   display: flex;
+    display: flex;
     justify-content: center;
     height: 30vh;
     width: 50%;
@@ -82,13 +82,12 @@
     width: fit-content;
     height: fit-content;
     align-items: center;
-    background-color: #2E2D2D;
+    background-color: #2e2d2d57;
     justify-content:space-between ;
     width: -webkit-fill-available;
 
     /*
     align-items: start;
-
     width: 100%;
     margin-right: 10px;
     height: fit-content;
@@ -103,4 +102,5 @@
     align-items: center;
     justify-content: space-between;
     margin: 20px;
+    width: 90%;
 }

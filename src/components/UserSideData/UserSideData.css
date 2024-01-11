@@ -8,8 +8,7 @@
     border-width: 1px;
     height: 150px;
     color: white;
-    width: -webkit-fill-available;
-    width: fit-content;
+    width: 60%;
     margin-right: 10px;
     height: fit-content;
     padding: 10px;
